@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ferry · Custom Apps</title>
+<meta name="description" content="Live speed, progress and time left for Mac file copies.">
+<link rel="icon" href="assets/icons/ferry.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-app="ferry">
+<div class="blobs" aria-hidden="true"><div class="blob"></div><div class="blob"></div><div class="blob"></div><div class="blob"></div></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brand-mark">✦</span>Custom Apps</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+    <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="clipper.html"><img src="assets/icons/clipper.png" alt="">Clipper</a></li><li><a href="ferry.html" aria-current="page"><img src="assets/icons/ferry.png" alt="">Ferry</a></li><li><a href="now-playing.html"><img src="assets/icons/now-playing.png" alt="">Now Playing</a></li><li><a href="orbit.html"><img src="assets/icons/orbit.png" alt="">Orbit</a></li><li><a href="install.html">Install</a></li><li><a href="updates.html">Updates</a></li><li><a href="built-with.html">Built with</a></li></ul>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <div class="wrap app-hero">
+    <div>
+      <img class="icon" src="assets/icons/ferry.png" alt="Ferry icon">
+      <div class="eyebrow">File copies</div>
+      <h1>Ferry</h1>
+      <p class="lead">See every file copy: speed, progress and time left. Ferry pops up when you copy to or from a drive, and stays out of the way the rest of the time.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="https://github.com/fortunehrjr/Ferry/releases/latest/download/Ferry.dmg">Download Ferry.dmg</a>
+        <a class="btn btn-ghost" href="#how">How it works</a>
+      </div>
+      <div class="meta"><span class="chip">macOS 26+</span><span class="chip">Apple silicon &amp; Intel</span><span class="chip">~14 MB, 0% CPU when idle</span></div>
+    </div>
+    <div class="mock-stage">
+      <div class="ferry-panel" id="ferry-mock">
+        <div class="fp-head">
+          <div class="fp-badge">⇣</div>
+          <div class="fp-title"><b>Copying to Day 2 Footage</b><small>From Samsung T7 · 24 files</small></div>
+          <div class="fp-pct" id="fp-pct">0%</div>
+        </div>
+        <div class="fp-chart"><svg viewBox="0 0 300 92" preserveAspectRatio="none">
+          <defs><linearGradient id="fg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3366ff" stop-opacity=".45"/><stop offset="1" stop-color="#00c6e0" stop-opacity=".05"/></linearGradient></defs>
+          <path id="fp-area" fill="url(#fg)" d=""/><path id="fp-line" fill="none" stroke="#3366ff" stroke-width="2" stroke-linejoin="round" d=""/>
+        </svg></div>
+        <div class="fp-bar"><i id="fp-bar"></i></div>
+        <div class="fp-stats">
+          <div><small>Speed</small><b id="fp-speed">0 MB/s</b></div>
+          <div><small>Copied</small><b id="fp-copied">0 of 40 GB</b></div>
+          <div><small>Time left</small><b id="fp-left">…</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how" style="padding-top:0">
+  <div class="wrap">
+    <div class="reveal"><div class="eyebrow">What you get</div><h2>Everything Finder's copy bar doesn't tell you</h2></div>
+    <div class="grid grid-3" style="margin-top:34px">
+      <div class="card feature reveal"><div class="ico">%</div><h3>Big, clear progress</h3><p>A large percentage, a progress bar, "18 GB of 40 GB" and an honest time left.</p></div>
+      <div class="card feature reveal"><div class="ico">⛰︎</div><h3>The speed mountain</h3><p>A live graph of copy speed, like Windows, so you can see slowdowns as they happen.</p></div>
+      <div class="card feature reveal"><div class="ico">⧉</div><h3>Several copies at once</h3><p>Each copy gets its own row with its own %, size and speed, just like Finder.</p></div>
+      <div class="card feature reveal"><div class="ico">⬆︎</div><h3>Always on top</h3><p>The floating window sits above every app, even full-screen ones. Or turn that off.</p></div>
+      <div class="card feature reveal"><div class="ico">✕</div><h3>Cancel any copy</h3><p>Two clicks to cancel, so a stray click never stops a long copy.</p></div>
+      <div class="card feature reveal"><div class="ico">◐</div><h3>Liquid Glass</h3><p>The translucent macOS look, with a switch for solid cards if you prefer.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap grid grid-2" style="align-items:start">
+    <div class="reveal">
+      <div class="eyebrow">How to use it</div>
+      <h2>Copy like you always do</h2>
+      <div class="steps" style="margin-top:26px">
+        <div class="step"><div><h3>Install and open it once</h3><p>Ferry starts by itself at login after that. Look for ⇅ in the menu bar.</p></div></div>
+        <div class="step"><div><h3>Copy files in Finder</h3><p>Drag footage to your SSD, or from a card to your Mac. Ferry pops up right away.</p></div></div>
+        <div class="step"><div><h3>Watch it, or don't</h3><p>Shrink it with the chevron, hide it with ✕. Ferry remembers your choice.</p></div></div>
+        <div class="step"><div><h3>Done</h3><p>It shows "Copy complete" with the average speed, then slips away. Past copies are in History.</p></div></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow">Settings</div>
+      <div class="table-wrap"><table>
+        <tr><th>Setting</th><th>What it does</th></tr>
+        <tr><td>Show: Ferry / Both / Finder</td><td>Pick which copy window you see. "Ferry" tucks Finder's window off-screen.</td></tr>
+        <tr><td>Keep above all windows</td><td>Floating window stays on top of every app.</td></tr>
+        <tr><td>Liquid Glass</td><td>Translucent or solid look.</td></tr>
+        <tr><td>Menu bar speed</td><td>Show live MB/s next to the icon.</td></tr>
+        <tr><td>Sensitivity</td><td>Catch every copy, or only big ones.</td></tr>
+        <tr><td>Open at login</td><td>Keep Ferry quietly running in the background.</td></tr>
+      </table></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap grid" style="gap:16px">
+    <div class="callout reveal"><div class="em">🔐</div><p><b>First time only:</b> macOS says it can't verify Ferry because it's not from the App Store. Open <b>System Settings › Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b>. <a href="install.html">Full install guide →</a></p></div>
+    <div class="callout reveal"><div class="em">🪟</div><p><b>Hiding Finder's window</b> ("Ferry" mode) needs Accessibility permission: <b>System Settings › Privacy &amp; Security › Accessibility</b>, switch on Ferry.</p></div>
+    <div class="callout reveal"><div class="em">⏸︎</div><p>Copies can be cancelled but not paused, because Finder doesn't let other apps pause its copies.</p></div>
+  </div>
+</section>
+<section style="padding-top:0"><div class="wrap pager reveal"><a class="card prev" href="clipper.html"><img src="assets/icons/clipper.png" alt=""><div><small>← Previous</small><b>Clipper</b></div></a><a class="card next" href="now-playing.html"><div><small>Next →</small><b>Now Playing</b></div><img src="assets/icons/now-playing.png" alt=""></a></div></section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>Custom Apps · four small Mac apps, made with care.</div>
+    <nav>
+      <a href="install.html">Install</a>
+      <a href="updates.html">Updates</a>
+      <a href="built-with.html">Built with</a>
+      <a href="https://github.com/fortunehrjr?tab=repositories">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/main.js"></script>
+</body>
+</html>

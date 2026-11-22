@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Now Playing · Custom Apps</title>
+<meta name="description" content="A Spotify mini player for the Mac menu bar and widgets.">
+<link rel="icon" href="assets/icons/now-playing.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-app="now-playing">
+<div class="blobs" aria-hidden="true"><div class="blob"></div><div class="blob"></div><div class="blob"></div><div class="blob"></div></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brand-mark">✦</span>Custom Apps</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+    <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="clipper.html"><img src="assets/icons/clipper.png" alt="">Clipper</a></li><li><a href="ferry.html"><img src="assets/icons/ferry.png" alt="">Ferry</a></li><li><a href="now-playing.html" aria-current="page"><img src="assets/icons/now-playing.png" alt="">Now Playing</a></li><li><a href="orbit.html"><img src="assets/icons/orbit.png" alt="">Orbit</a></li><li><a href="install.html">Install</a></li><li><a href="updates.html">Updates</a></li><li><a href="built-with.html">Built with</a></li></ul>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <div class="wrap app-hero">
+    <div>
+      <img class="icon" src="assets/icons/now-playing.png" alt="Now Playing icon">
+      <div class="eyebrow">Music</div>
+      <h1>Now <span class="grad-text">Playing</span></h1>
+      <p class="lead">Spotify, right in your menu bar and Notification Center. Album art, the song, and every control you need, without opening Spotify.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="https://github.com/fortunehrjr/Now-Playing/releases/latest/download/Now-Playing.dmg">Download Now Playing.dmg</a>
+        <a class="btn btn-ghost" href="#use">How to use</a>
+      </div>
+      <div class="meta"><span class="chip">macOS 14+</span><span class="chip">Apple silicon &amp; Intel</span><span class="chip">Needs Spotify</span></div>
+    </div>
+    <div class="mock-stage">
+      <div>
+        <div class="np-player" id="np-mock">
+          <div class="np-top">
+            <div class="np-art"></div>
+            <div class="np-meta"><small>Playing from album</small><b>Midnight Drive</b><span>The Night Owls</span>
+              <div class="eq"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+          </div>
+          <div class="np-bar"><i></i></div>
+          <div class="np-times"><span id="np-now">1:02</span><span id="np-rest">-2:32</span></div>
+          <div class="np-ctrls"><span class="on">⤨</span><span>⏮</span><span class="play">❚❚</span><span>⏭</span><span>↻</span></div>
+        </div>
+        <div class="np-sizes"><span class="chip">Small</span><span class="chip">Medium</span><span class="chip">Large</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="reveal"><div class="eyebrow">What you get</div><h2>Your music, one click away</h2></div>
+    <div class="grid grid-3" style="margin-top:34px">
+      <div class="card feature reveal"><div class="ico">♪</div><h3>Menu bar mini player</h3><p>Click the note for art, song, artist, progress and controls.</p></div>
+      <div class="card feature reveal"><div class="ico">▤</div><h3>Widgets in three sizes</h3><p>Small, medium and large Notification Center widgets with a live preview.</p></div>
+      <div class="card feature reveal"><div class="ico">⏯︎</div><h3>Full controls</h3><p>Play, pause, skip, go back, shuffle and repeat, all sent straight to Spotify.</p></div>
+      <div class="card feature reveal"><div class="ico">🎨</div><h3>Make it yours</h3><p>Pick the background and choose which buttons, times and headers show.</p></div>
+      <div class="card feature reveal"><div class="ico">〰︎</div><h3>Song in the menu bar</h3><p>Optionally show the song title next to the icon.</p></div>
+      <div class="card feature reveal"><div class="ico">⚡︎</div><h3>Starts with your Mac</h3><p>Launch at login, with or without a Dock icon.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="use" style="padding-top:0">
+  <div class="wrap grid grid-2" style="align-items:start">
+    <div class="reveal">
+      <div class="eyebrow">How to use it</div>
+      <h2>Set up in three steps</h2>
+      <div class="steps" style="margin-top:26px">
+        <div class="step"><div><h3>Open Now Playing</h3><p>The main window shows a live preview of the player.</p></div></div>
+        <div class="step"><div><h3>Allow it to control Spotify</h3><p>macOS asks once: "Now Playing wants to control Spotify". Click <b>OK</b>.</p></div></div>
+        <div class="step"><div><h3>Add the widget</h3><p>Click the date and time in the menu bar › <b>Edit Widgets</b> › search <b>Now Playing</b>.</p></div></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow">Settings</div>
+      <div class="table-wrap"><table>
+        <tr><th>Setting</th><th>What it does</th></tr>
+        <tr><td>Size preview</td><td>See the small, medium and large widget exactly.</td></tr>
+        <tr><td>Background</td><td>Choose the player's background style.</td></tr>
+        <tr><td>Shuffle &amp; repeat</td><td>Show or hide those buttons.</td></tr>
+        <tr><td>Elapsed &amp; total time</td><td>Times under the progress bar.</td></tr>
+        <tr><td>Album header</td><td>"Playing from album" on top.</td></tr>
+        <tr><td>Menu bar &amp; Dock</td><td>Icon only, icon plus song, Dock or no Dock.</td></tr>
+      </table></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0"><div class="wrap grid" style="gap:16px">
+  <div class="callout reveal"><div class="em">🔐</div><p><b>First time only:</b> macOS says it can't verify Now Playing because it's not from the App Store. Open <b>System Settings › Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b>. <a href="install.html">Full install guide →</a></p></div>
+  <div class="callout reveal"><div class="em">🧩</div><p>The <b>widget</b> needs the app signed with your Apple ID in Xcode. The menu bar player works either way. <a href="updates.html">How to rebuild →</a></p></div>
+</div></section>
+<section style="padding-top:0"><div class="wrap pager reveal"><a class="card prev" href="ferry.html"><img src="assets/icons/ferry.png" alt=""><div><small>← Previous</small><b>Ferry</b></div></a><a class="card next" href="orbit.html"><div><small>Next →</small><b>Orbit</b></div><img src="assets/icons/orbit.png" alt=""></a></div></section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>Custom Apps · four small Mac apps, made with care.</div>
+    <nav>
+      <a href="install.html">Install</a>
+      <a href="updates.html">Updates</a>
+      <a href="built-with.html">Built with</a>
+      <a href="https://github.com/fortunehrjr?tab=repositories">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/main.js"></script>
+</body>
+</html>

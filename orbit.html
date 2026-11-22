@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orbit · Custom Apps</title>
+<meta name="description" content="A calm focus timer for Mac with music built in.">
+<link rel="icon" href="assets/icons/orbit.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-app="orbit">
+<div class="blobs" aria-hidden="true"><div class="blob"></div><div class="blob"></div><div class="blob"></div><div class="blob"></div></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brand-mark">✦</span>Custom Apps</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+    <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="clipper.html"><img src="assets/icons/clipper.png" alt="">Clipper</a></li><li><a href="ferry.html"><img src="assets/icons/ferry.png" alt="">Ferry</a></li><li><a href="now-playing.html"><img src="assets/icons/now-playing.png" alt="">Now Playing</a></li><li><a href="orbit.html" aria-current="page"><img src="assets/icons/orbit.png" alt="">Orbit</a></li><li><a href="install.html">Install</a></li><li><a href="updates.html">Updates</a></li><li><a href="built-with.html">Built with</a></li></ul>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <div class="wrap app-hero">
+    <div>
+      <img class="icon" src="assets/icons/orbit.png" alt="Orbit icon">
+      <div class="eyebrow">Focus</div>
+      <h1>Orbit</h1>
+      <p class="lead">A calm focus timer with your music built in. Focus, take a break, repeat, with a glowing dial that keeps you on track.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="https://github.com/fortunehrjr/Orbit/releases/latest/download/Orbit.dmg">Download Orbit.dmg</a>
+        <a class="btn btn-ghost" href="#use">How to use</a>
+      </div>
+      <div class="meta"><span class="chip">macOS 26+</span><span class="chip">Apple silicon &amp; Intel</span><span class="chip">Pomodoro style</span></div>
+    </div>
+    <div class="mock-stage">
+      <div class="orbit-card" id="orbit-mock">
+        <div class="modes"><span class="on">Focus</span><span>Short Break</span><span>Long Break</span></div>
+        <div class="dial">
+          <svg viewBox="0 0 230 230">
+            <circle cx="115" cy="115" r="100" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="12"/>
+            <circle id="orbit-ring" cx="115" cy="115" r="100" fill="none" stroke="#8B5CF6" stroke-width="12" stroke-linecap="round"/>
+            <circle id="orbit-dot" cx="215" cy="115" r="9" fill="#F6C972"/>
+          </svg>
+          <div class="time"><b id="orbit-time">25:00</b><small id="orbit-label">Deep work</small></div>
+        </div>
+        <div class="orbit-task">Studying <b id="orbit-task">Biology revision</b> · 3 today</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="reveal"><div class="eyebrow">What you get</div><h2>Focus that feels good</h2></div>
+    <div class="grid grid-3" style="margin-top:34px">
+      <div class="card feature reveal"><div class="ico">◔</div><h3>The dial</h3><p>A big, glowing ring counts down. The last ten seconds glow brighter.</p></div>
+      <div class="card feature reveal"><div class="ico">↻</div><h3>Focus &amp; breaks</h3><p>Focus 25, short break 5, long break 15. Change any of them.</p></div>
+      <div class="card feature reveal"><div class="ico">♫</div><h3>Music built in</h3><p>Control Spotify, Apple Music or YouTube, or play music files from your Mac.</p></div>
+      <div class="card feature reveal"><div class="ico">⧈</div><h3>Mini timer</h3><p>A small floating timer keeps the countdown in view while you work.</p></div>
+      <div class="card feature reveal"><div class="ico">3·2·1</div><h3>Countdown start</h3><p>A short 3·2·1 before each session. Turn it off if you like.</p></div>
+      <div class="card feature reveal"><div class="ico">🎉</div><h3>Celebrate progress</h3><p>Finished sessions are celebrated and counted for today.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="use" style="padding-top:0">
+  <div class="wrap grid grid-2" style="align-items:start">
+    <div class="reveal">
+      <div class="eyebrow">How to use it</div>
+      <h2>One session at a time</h2>
+      <div class="steps" style="margin-top:26px">
+        <div class="step"><div><h3>Pick a mode</h3><p>Focus (purple), Short Break (teal) or Long Break (blue).</p></div></div>
+        <div class="step"><div><h3>Name your task</h3><p>Type what you're studying so you stay on one thing.</p></div></div>
+        <div class="step"><div><h3>Press start</h3><p>3·2·1, then the dial counts down. Allow notifications to hear when it ends.</p></div></div>
+        <div class="step"><div><h3>Add music</h3><p>Whatever plays in Spotify, Music or YouTube shows up. Or drop audio files onto the music card.</p></div></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow">Menu commands</div>
+      <div class="table-wrap"><table>
+        <tr><th>Command</th><th>What it does</th></tr>
+        <tr><td>Reset</td><td>Start the current session over.</td></tr>
+        <tr><td>Skip to Next Session</td><td>Jump to the next part of the cycle.</td></tr>
+        <tr><td>Toggle Mini Timer</td><td>Show or hide the floating timer.</td></tr>
+        <tr><td>Play / Pause · Next · Previous</td><td>Control your music.</td></tr>
+        <tr><td>Play Music from This Mac…</td><td>Pick audio files or a folder.</td></tr>
+      </table></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0"><div class="wrap grid" style="gap:16px">
+  <div class="callout reveal"><div class="em">🔐</div><p><b>First time only:</b> macOS says it can't verify Orbit because it's not from the App Store. Open <b>System Settings › Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b>. <a href="install.html">Full install guide →</a></p></div>
+  <div class="callout reveal"><div class="em">🎵</div><p>The first time Orbit reads your music, macOS asks <b>"Orbit wants to control Spotify"</b> (or Music, Chrome, Safari). Click <b>OK</b>.</p></div>
+</div></section>
+<section style="padding-top:0"><div class="wrap pager reveal"><a class="card prev" href="now-playing.html"><img src="assets/icons/now-playing.png" alt=""><div><small>← Previous</small><b>Now Playing</b></div></a><a class="card next" href="clipper.html"><div><small>Next →</small><b>Clipper</b></div><img src="assets/icons/clipper.png" alt=""></a></div></section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>Custom Apps · four small Mac apps, made with care.</div>
+    <nav>
+      <a href="install.html">Install</a>
+      <a href="updates.html">Updates</a>
+      <a href="built-with.html">Built with</a>
+      <a href="https://github.com/fortunehrjr?tab=repositories">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/main.js"></script>
+</body>
+</html>

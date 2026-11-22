@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clipper · Custom Apps</title>
+<meta name="description" content="Snap, resize and lock Mac windows.">
+<link rel="icon" href="assets/icons/clipper.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-app="clipper">
+<div class="blobs" aria-hidden="true"><div class="blob"></div><div class="blob"></div><div class="blob"></div><div class="blob"></div></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brand-mark">✦</span>Custom Apps</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+    <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="clipper.html" aria-current="page"><img src="assets/icons/clipper.png" alt="">Clipper</a></li><li><a href="ferry.html"><img src="assets/icons/ferry.png" alt="">Ferry</a></li><li><a href="now-playing.html"><img src="assets/icons/now-playing.png" alt="">Now Playing</a></li><li><a href="orbit.html"><img src="assets/icons/orbit.png" alt="">Orbit</a></li><li><a href="install.html">Install</a></li><li><a href="updates.html">Updates</a></li><li><a href="built-with.html">Built with</a></li></ul>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <div class="wrap app-hero">
+    <div>
+      <img class="icon" src="assets/icons/clipper.png" alt="Clipper icon">
+      <div class="eyebrow">Window snapping</div>
+      <h1>Clipper</h1>
+      <p class="lead">Snap, resize and pin your windows, calmly. Drag a window to an edge, or use a shortcut, and it clicks neatly into place.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="https://github.com/fortunehrjr/Clipper/releases/latest/download/Clipper.dmg">Download Clipper.dmg</a>
+        <a class="btn btn-ghost" href="#shortcuts">See shortcuts</a>
+      </div>
+      <div class="meta"><span class="chip">macOS 14+</span><span class="chip">Apple silicon &amp; Intel</span><span class="chip">Lives in the menu bar</span></div>
+    </div>
+    <div class="mock-stage">
+      <div>
+        <div class="desk" id="clipper-desk">
+          <div class="menubar">📎</div>
+          <div class="snap-ghost"></div>
+          <div class="win win-a"><div class="bar"><i></i><i></i><i></i></div><div class="body"><span></span><span></span><span></span></div></div>
+          <div class="win win-b"><div class="bar"><i></i><i></i><i></i></div><div class="body"><span></span><span></span><span></span></div></div>
+          <div class="lock-badge">🔒 Locked</div>
+          <svg class="cursor" viewBox="0 0 24 24"><path d="M3 2l7 19 2.5-7.5L20 11z" fill="#111" stroke="#fff" stroke-width="1.5"/></svg>
+        </div>
+        <div class="keys" id="clipper-keys"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>→</kbd></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="reveal"><div class="eyebrow">What you get</div><h2>Tidy windows without thinking about it</h2></div>
+    <div class="grid grid-3" style="margin-top:34px">
+      <div class="card feature reveal"><div class="ico">◧</div><h3>Snap to the edges</h3><p>Left or right edge for half the screen, corners for quarters, the top to fill it.</p></div>
+      <div class="card feature reveal"><div class="ico">⌨︎</div><h3>Keyboard shortcuts</h3><p>⌃⌥ plus an arrow. Press again to cycle through ½, ⅔ and ⅓.</p></div>
+      <div class="card feature reveal"><div class="ico">⇔</div><h3>Resize together</h3><p>Drag the edge between two windows and both follow, like a shared divider.</p></div>
+      <div class="card feature reveal"><div class="ico">🔒</div><h3>Lock in place</h3><p>⌃⌥L pins a window. If anything moves it, it slides right back.</p></div>
+      <div class="card feature reveal"><div class="ico">▦</div><h3>Thirds and more</h3><p>First, center and last thirds, two-thirds, center, fill and restore.</p></div>
+      <div class="card feature reveal"><div class="ico">🎓</div><h3>Guided tour</h3><p>An animated tour shows every move, and you can replay it any time.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="shortcuts" style="padding-top:0">
+  <div class="wrap grid grid-2" style="align-items:start">
+    <div class="reveal">
+      <div class="eyebrow">Shortcuts</div>
+      <h2>Your hands never leave the keyboard</h2>
+      <div class="table-wrap" style="margin-top:24px"><table>
+        <tr><th>Keys</th><th>Result</th></tr>
+        <tr><td><kbd>⌃</kbd> <kbd>⌥</kbd> <kbd>←</kbd></td><td>Left half, then ⅔, then ⅓</td></tr>
+        <tr><td><kbd>⌃</kbd> <kbd>⌥</kbd> <kbd>→</kbd></td><td>Right half, then ⅔, then ⅓</td></tr>
+        <tr><td><kbd>⌃</kbd> <kbd>⌥</kbd> <kbd>↑</kbd></td><td>Top half</td></tr>
+        <tr><td><kbd>⌃</kbd> <kbd>⌥</kbd> <kbd>↓</kbd></td><td>Bottom half</td></tr>
+        <tr><td><kbd>⌃</kbd> <kbd>⌥</kbd> <kbd>L</kbd></td><td>Lock / unlock the window</td></tr>
+      </table></div>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow">How to use it</div>
+      <h2>Three moves to learn</h2>
+      <div class="steps" style="margin-top:26px">
+        <div class="step"><div><h3>Allow Accessibility</h3><p>Clipper asks once. Switch it on in Privacy &amp; Security › Accessibility. The welcome window carries on by itself.</p></div></div>
+        <div class="step"><div><h3>Drag to an edge</h3><p>A soft outline shows where the window will land. Let go and it snaps.</p></div></div>
+        <div class="step"><div><h3>Use the peg</h3><p>Everything (layouts, settings, the tour) is under the peg icon in your menu bar.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0"><div class="wrap"><div class="callout reveal"><div class="em">🔐</div><p><b>First time only:</b> macOS says it can't verify Clipper because it's not from the App Store. Open <b>System Settings › Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b>. <a href="install.html">Full install guide →</a></p></div></div></section>
+<section style="padding-top:0"><div class="wrap pager reveal"><a class="card prev" href="orbit.html"><img src="assets/icons/orbit.png" alt=""><div><small>← Previous</small><b>Orbit</b></div></a><a class="card next" href="ferry.html"><div><small>Next →</small><b>Ferry</b></div><img src="assets/icons/ferry.png" alt=""></a></div></section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>Custom Apps · four small Mac apps, made with care.</div>
+    <nav>
+      <a href="install.html">Install</a>
+      <a href="updates.html">Updates</a>
+      <a href="built-with.html">Built with</a>
+      <a href="https://github.com/fortunehrjr?tab=repositories">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Custom Apps · four little Mac apps</title>
+<meta name="description" content="Clipper, Ferry, Now Playing and Orbit: small native Mac apps.">
+<link rel="icon" href="assets/icons/ferry.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="blobs" aria-hidden="true"><div class="blob"></div><div class="blob"></div><div class="blob"></div><div class="blob"></div></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brand-mark">✦</span>Custom Apps</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+    <ul class="nav-links"><li><a href="index.html" aria-current="page">Home</a></li><li><a href="clipper.html"><img src="assets/icons/clipper.png" alt="">Clipper</a></li><li><a href="ferry.html"><img src="assets/icons/ferry.png" alt="">Ferry</a></li><li><a href="now-playing.html"><img src="assets/icons/now-playing.png" alt="">Now Playing</a></li><li><a href="orbit.html"><img src="assets/icons/orbit.png" alt="">Orbit</a></li><li><a href="install.html">Install</a></li><li><a href="updates.html">Updates</a></li><li><a href="built-with.html">Built with</a></li></ul>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Made for Mac</div>
+    <h1><span class="line">Four little apps.</span><span class="line grad-text">One happier Mac.</span></h1>
+    <p class="lead">Snap your windows, watch your file copies, control Spotify from the menu bar and stay focused, with apps that feel like they came with your Mac.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="#apps">Explore the apps <span>→</span></a>
+      <a class="btn btn-ghost" href="install.html">How to install</a>
+    </div>
+    <div class="hero-icons">
+      <a href="clipper.html" title="Clipper"><img src="assets/icons/clipper.png" alt="Clipper"></a>
+      <a href="ferry.html" title="Ferry"><img src="assets/icons/ferry.png" alt="Ferry"></a>
+      <a href="now-playing.html" title="Now Playing"><img src="assets/icons/now-playing.png" alt="Now Playing"></a>
+      <a href="orbit.html" title="Orbit"><img src="assets/icons/orbit.png" alt="Orbit"></a>
+    </div>
+    <div class="scroll-hint"><span>↓</span> scroll to meet them</div>
+  </div>
+</section>
+
+<section id="apps" style="padding-top:20px">
+  <div class="wrap">
+    <div class="center reveal">
+      <div class="eyebrow">The apps</div>
+      <h2>Pick one to get started</h2>
+      <p class="lead">Each app has its own page with a live preview, setup steps and tips.</p>
+    </div>
+    <div class="grid tiles" style="margin-top:40px">
+      <a class="app-tile tile-clipper" href="clipper.html">
+        <img src="assets/icons/clipper.png" alt=""><span class="tag">Windows</span>
+        <h3>Clipper</h3><p>Drag windows to the edges to snap them into place, resize two at once, and lock a window so nothing moves it.</p>
+        <span class="go">Meet Clipper <span>→</span></span>
+      </a>
+      <a class="app-tile tile-ferry" href="ferry.html">
+        <img src="assets/icons/ferry.png" alt=""><span class="tag">File copies</span>
+        <h3>Ferry</h3><p>A floating window with live speed, a big percentage and time left whenever you copy files to or from a drive.</p>
+        <span class="go">Meet Ferry <span>→</span></span>
+      </a>
+      <a class="app-tile tile-now" href="now-playing.html">
+        <img src="assets/icons/now-playing.png" alt=""><span class="tag">Music</span>
+        <h3>Now Playing</h3><p>A Spotify mini player in your menu bar and Notification Center. Play, pause and skip without switching apps.</p>
+        <span class="go">Meet Now Playing <span>→</span></span>
+      </a>
+      <a class="app-tile tile-orbit" href="orbit.html">
+        <img src="assets/icons/orbit.png" alt=""><span class="tag">Focus</span>
+        <h3>Orbit</h3><p>A calm study timer with a glowing dial, focus and break sessions, and your music right next to it.</p>
+        <span class="go">Meet Orbit <span>→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="card stats reveal">
+      <div class="stat"><b data-count="4">4</b><span>apps</span></div>
+      <div class="stat"><b data-count="10" data-suffix=" MB">10 MB</b><span>for all four together</span></div>
+      <div class="stat"><b data-count="0">0</b><span>subscriptions or accounts</span></div>
+      <div class="stat"><b data-count="100" data-suffix="%">100%</b><span>native Swift</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="center reveal">
+      <div class="eyebrow">Getting started</div>
+      <h2>Up and running in a minute</h2>
+    </div>
+    <div class="grid grid-3" style="margin-top:40px">
+      <div class="card feature reveal"><div class="ico">⬇︎</div><h3>1. Open the installer</h3><p>Download the app's .dmg from its page and double-click it.</p></div>
+      <div class="card feature reveal"><div class="ico">↗︎</div><h3>2. Drag to Applications</h3><p>Drop the app onto the Applications shortcut in the window that opens.</p></div>
+      <div class="card feature reveal"><div class="ico">✓</div><h3>3. Allow it once</h3><p>The first time, click <b>Open Anyway</b> in Privacy &amp; Security. That's it.</p></div>
+    </div>
+    <div class="btn-row" style="justify-content:center"><a class="btn btn-primary" href="install.html">Full install guide <span>→</span></a></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>Custom Apps · four small Mac apps, made with care.</div>
+    <nav>
+      <a href="install.html">Install</a>
+      <a href="updates.html">Updates</a>
+      <a href="built-with.html">Built with</a>
+      <a href="https://github.com/fortunehrjr?tab=repositories">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/main.js"></script>
+</body>
+</html>
