@@ -4,7 +4,9 @@
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const hasGSAP = typeof window.gsap !== "undefined";
   // Add ?static to the address to see the site with no motion.
-  const animate = hasGSAP && !reduce && !/[?&]static\b/.test(location.search);
+  // Data Saver on: skip motion so the page appears instantly.
+  const saveData = !!(navigator.connection && navigator.connection.saveData);
+  const animate = hasGSAP && !reduce && !saveData && !/[?&]static\b/.test(location.search);
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
 
@@ -85,6 +87,23 @@
     .from(".hero .btn-row > *, .app-hero .btn-row > *, .app-hero .meta > *", { y: 18, opacity: 0, duration: 0.6, stagger: 0.06 }, "-=0.5")
     .from(".hero-icons a", { y: 60, scale: 0.6, rotation: (i) => (i % 2 ? 14 : -14), opacity: 0, duration: 1, stagger: 0.1, ease: "back.out(1.7)" }, "-=0.6")
     .from(".mock-stage > *", { y: 50, scale: 0.92, opacity: 0, duration: 1.1, ease: "expo.out" }, "-=1");
+
+  // Safety net: phones in Low Power Mode, in-app browsers (WhatsApp, Instagram)
+  // and slow devices can throttle animation frames. Plain timers still run, so
+  // force everything visible if an animation hasn't finished in time.
+  setTimeout(() => { if (intro.progress() < 1) intro.progress(1); }, 2500);
+  const stuck = new WeakMap();
+  const watch = setInterval(() => {
+    $$(".reveal, .app-tile, .mock-stage > *, .hero-icons a").forEach((el) => {
+      const r = el.getBoundingClientRect();
+      const onScreen = r.bottom > 0 && r.top < innerHeight;
+      if (!onScreen || parseFloat(getComputedStyle(el).opacity) > 0.1) { stuck.set(el, 0); return; }
+      const n = (stuck.get(el) || 0) + 1;
+      stuck.set(el, n);
+      if (n >= 2) { gsap.killTweensOf(el); gsap.set(el, { opacity: 1, x: 0, y: 0, scale: 1, rotation: 0 }); }
+    });
+  }, 1000);
+  setTimeout(() => clearInterval(watch), 120000);
 
   // Gentle floating icons
   $$(".hero-icons a").forEach((a, i) => {
