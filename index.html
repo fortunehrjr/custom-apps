@@ -2,129 +2,648 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Custom Apps · five little Mac apps</title>
-<meta name="description" content="Clipper, Ferry, Now Playing, Orbit and Stash: small native Mac apps.">
-<link rel="icon" href="assets/icons/ferry.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"></noscript>
-<link rel="stylesheet" href="assets/style.css?v=4">
+<meta name="description" content="Clipper, Ferry, Now Playing, Orbit and Stash: five small native Mac apps.">
+<meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b0b0d" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="assets/icons/stash.png">
+<link rel="stylesheet" href="assets/site.css?v=5">
+<script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-<div class="blobs" aria-hidden="true"><div class="blob"></div><div class="blob"></div><div class="blob"></div><div class="blob"></div></div>
-<div class="grain" aria-hidden="true"></div>
 
 <header class="nav">
   <div class="wrap">
-    <a class="brand" href="index.html"><span class="brand-mark">✦</span>Custom Apps</a>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-    <ul class="nav-links"><li><a href="index.html" aria-current="page">Home</a></li><li><a href="clipper.html"><img src="assets/icons/clipper.png" alt="">Clipper</a></li><li><a href="ferry.html"><img src="assets/icons/ferry.png" alt="">Ferry</a></li><li><a href="now-playing.html"><img src="assets/icons/now-playing.png" alt="">Now Playing</a></li><li><a href="orbit.html"><img src="assets/icons/orbit.png" alt="">Orbit</a></li><li><a href="stash.html"><img src="assets/icons/stash.png" alt="">Stash</a></li><li><a href="install.html">Install</a></li><li><a href="updates.html">Updates</a></li><li><a href="built-with.html">Built with</a></li></ul>
+    <a class="brand" href="#"><span class="brand-mark">✦</span>Custom Apps</a>
+    <nav class="tabs" aria-label="Apps">
+      <span class="tab-pill" aria-hidden="true"></span>
+      <a href="#" data-go="home">Overview</a>
+      <a href="#clipper" data-go="clipper"><img src="assets/icons/clipper.png" alt="" width="18" height="18">Clipper</a>
+      <a href="#ferry" data-go="ferry"><img src="assets/icons/ferry.png" alt="" width="18" height="18">Ferry</a>
+      <a href="#now-playing" data-go="now-playing"><img src="assets/icons/now-playing.png" alt="" width="18" height="18">Now Playing</a>
+      <a href="#orbit" data-go="orbit"><img src="assets/icons/orbit.png" alt="" width="18" height="18">Orbit</a>
+      <a href="#stash" data-go="stash"><img src="assets/icons/stash.png" alt="" width="18" height="18">Stash</a>
+    </nav>
+    <a class="btn btn-primary btn-sm nav-cta" href="#install">Install</a>
   </div>
 </header>
 
 <main>
 
-<section class="hero">
-  <div class="wrap">
-    <div class="eyebrow">Made for Mac</div>
-    <h1><span class="line">Five little apps.</span><span class="line grad-text">One happier Mac.</span></h1>
-    <p class="lead">Snap your windows, watch your file copies, control Spotify from the menu bar, stay focused and never lose a copy, with apps that feel like they came with your Mac.</p>
-    <div class="btn-row">
-      <a class="btn btn-primary" href="#apps">Explore the apps <span>→</span></a>
-      <a class="btn btn-ghost" href="install.html">How to install</a>
+<!-- ======================= HOME ======================= -->
+<div class="view active" data-view="home" data-title="Custom Apps">
+  <section class="hero">
+    <div class="wrap">
+      <h1 class="rv">Five little apps.<br><span class="grad" style="--accent:#0a84ff;--accent2:#c04bff">One happier Mac.</span></h1>
+      <p class="lead rv" style="--d:1">Snap your windows, watch your file copies, play Spotify from the menu bar, stay focused and never lose a copy, with apps that feel like they came with your Mac.</p>
+      <div class="btns rv" style="--d:2">
+        <a class="btn btn-primary" href="#home/apps">Explore the apps</a>
+        <a class="btn btn-soft" href="#install">How to install</a>
+      </div>
+      <div class="dock mock rv" style="--d:3">
+        <a href="#clipper" title="Clipper"><img class="bob" style="--i:0" src="assets/icons/clipper.png" alt="Clipper" width="84" height="84"></a>
+        <a href="#ferry" title="Ferry"><img class="bob" style="--i:1" src="assets/icons/ferry.png" alt="Ferry" width="84" height="84"></a>
+        <a href="#now-playing" title="Now Playing"><img class="bob" style="--i:2" src="assets/icons/now-playing.png" alt="Now Playing" width="84" height="84"></a>
+        <a href="#orbit" title="Orbit"><img class="bob" style="--i:3" src="assets/icons/orbit.png" alt="Orbit" width="84" height="84"></a>
+        <a href="#stash" title="Stash"><img class="bob" style="--i:4" src="assets/icons/stash.png" alt="Stash" width="84" height="84"></a>
+      </div>
     </div>
-    <div class="hero-icons">
-      <a href="clipper.html" title="Clipper"><img src="assets/icons/clipper.png" alt="Clipper"></a>
-      <a href="ferry.html" title="Ferry"><img src="assets/icons/ferry.png" alt="Ferry"></a>
-      <a href="now-playing.html" title="Now Playing"><img src="assets/icons/now-playing.png" alt="Now Playing"></a>
-      <a href="orbit.html" title="Orbit"><img src="assets/icons/orbit.png" alt="Orbit"></a>
-      <a href="stash.html" title="Stash"><img src="assets/icons/stash.png" alt="Stash"></a>
-    </div>
-    <div class="scroll-hint"><span>↓</span> scroll to meet them</div>
-  </div>
-</section>
+  </section>
 
-<section id="apps" style="padding-top:20px">
-  <div class="wrap">
-    <div class="center reveal">
-      <div class="eyebrow">The apps</div>
-      <h2>Pick one to get started</h2>
-      <p class="lead">Each app has its own page with a live preview, setup steps and tips.</p>
+  <section id="home-apps">
+    <div class="wrap">
+      <div class="center rv"><h2>Pick one to get started</h2><p class="lead" style="margin-top:12px">Each app has a live preview, setup steps and tips.</p></div>
+      <div class="bento">
+        <a class="card-app rv" data-app="clipper" href="#clipper"><span class="tag">Windows</span><img src="assets/icons/clipper.png" alt="" width="64" height="64" loading="lazy"><h3>Clipper</h3><p>Drag windows to the edges to snap them into place, resize two at once, and lock a window so nothing moves it.</p><span class="link-more">Learn more <span>›</span></span></a>
+        <a class="card-app rv" style="--d:1" data-app="ferry" href="#ferry"><span class="tag">File copies</span><img src="assets/icons/ferry.png" alt="" width="64" height="64" loading="lazy"><h3>Ferry</h3><p>Live speed, a big percentage and time left whenever you copy files to or from a drive.</p><span class="link-more">Learn more <span>›</span></span></a>
+        <a class="card-app rv" data-app="now-playing" href="#now-playing"><span class="tag">Music</span><img src="assets/icons/now-playing.png" alt="" width="64" height="64" loading="lazy"><h3>Now Playing</h3><p>A Spotify mini player in your menu bar and Notification Center.</p><span class="link-more">Learn more <span>›</span></span></a>
+        <a class="card-app rv" style="--d:1" data-app="orbit" href="#orbit"><span class="tag">Focus</span><img src="assets/icons/orbit.png" alt="" width="64" height="64" loading="lazy"><h3>Orbit</h3><p>A calm study timer with a glowing dial and your music next to it.</p><span class="link-more">Learn more <span>›</span></span></a>
+        <a class="card-app rv" style="--d:2" data-app="stash" href="#stash"><span class="tag">New · Clipboard</span><img src="assets/icons/stash.png" alt="" width="64" height="64" loading="lazy"><h3>Stash</h3><p>Everything you copy, in one place. Press ⌃H and your history slides up from the corner.</p><span class="link-more">Learn more <span>›</span></span></a>
+      </div>
     </div>
-    <div class="grid tiles" style="margin-top:40px">
-      <a class="app-tile tile-clipper" href="clipper.html">
-        <img src="assets/icons/clipper.png" alt=""><span class="tag">Windows</span>
-        <h3>Clipper</h3><p>Drag windows to the edges to snap them into place, resize two at once, and lock a window so nothing moves it.</p>
-        <span class="go">Meet Clipper <span>→</span></span>
-      </a>
-      <a class="app-tile tile-ferry" href="ferry.html">
-        <img src="assets/icons/ferry.png" alt=""><span class="tag">File copies</span>
-        <h3>Ferry</h3><p>A floating window with live speed, a big percentage and time left whenever you copy files to or from a drive.</p>
-        <span class="go">Meet Ferry <span>→</span></span>
-      </a>
-      <a class="app-tile tile-now" href="now-playing.html">
-        <img src="assets/icons/now-playing.png" alt=""><span class="tag">Music</span>
-        <h3>Now Playing</h3><p>A Spotify mini player in your menu bar and Notification Center. Play, pause and skip without switching apps.</p>
-        <span class="go">Meet Now Playing <span>→</span></span>
-      </a>
-      <a class="app-tile tile-orbit" href="orbit.html">
-        <img src="assets/icons/orbit.png" alt=""><span class="tag">Focus</span>
-        <h3>Orbit</h3><p>A calm study timer with a glowing dial, focus and break sessions, and your music right next to it.</p>
-        <span class="go">Meet Orbit <span>→</span></span>
-      </a>
-      <a class="app-tile tile-stash" href="stash.html">
-        <img src="assets/icons/stash.png" alt=""><span class="tag">New · Clipboard</span>
-        <h3>Stash</h3><p>Everything you copy, kept in one place. Press ⌃H and your history slides up from the corner, ready to paste.</p>
-        <span class="go">Meet Stash <span>→</span></span>
-      </a>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <div class="wrap">
-    <div class="card stats reveal">
-      <div class="stat"><b data-count="5">5</b><span>apps</span></div>
-      <div class="stat"><b data-count="12" data-suffix=" MB">12 MB</b><span>for all five together</span></div>
-      <div class="stat"><b data-count="0">0</b><span>subscriptions or accounts</span></div>
-      <div class="stat"><b data-count="100" data-suffix="%">100%</b><span>native Swift</span></div>
+  <section>
+    <div class="wrap">
+      <div class="stats rv">
+        <div><b>5</b><span>apps</span></div>
+        <div><b>12 MB</b><span>for all five</span></div>
+        <div><b>0</b><span>subscriptions or accounts</span></div>
+        <div><b>100%</b><span>native Swift</span></div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <div class="wrap">
-    <div class="center reveal">
-      <div class="eyebrow">Getting started</div>
-      <h2>Up and running in a minute</h2>
+  <section>
+    <div class="wrap">
+      <div class="center rv sec-head"><h2>Up and running in a minute</h2></div>
+      <div class="grid3">
+        <div class="feat rv"><div class="ico">↓</div><h3>Open the installer</h3><p>Download the app's .dmg from its page and double-click it.</p></div>
+        <div class="feat rv" style="--d:1"><div class="ico">↗</div><h3>Drag to Applications</h3><p>Drop the app onto the Applications shortcut in the window that opens.</p></div>
+        <div class="feat rv" style="--d:2"><div class="ico">✓</div><h3>Allow it once</h3><p>The first time, click <b>Open Anyway</b> in Privacy &amp; Security. That's it.</p></div>
+      </div>
+      <div class="btns rv" style="justify-content:center"><a class="btn btn-soft" href="#install">Full install guide</a><a class="btn btn-soft" href="#updates">Updating</a><a class="btn btn-soft" href="#built-with">How they're built</a></div>
     </div>
-    <div class="grid grid-3" style="margin-top:40px">
-      <div class="card feature reveal"><div class="ico">⬇︎</div><h3>1. Open the installer</h3><p>Download the app's .dmg from its page and double-click it.</p></div>
-      <div class="card feature reveal"><div class="ico">↗︎</div><h3>2. Drag to Applications</h3><p>Drop the app onto the Applications shortcut in the window that opens.</p></div>
-      <div class="card feature reveal"><div class="ico">✓</div><h3>3. Allow it once</h3><p>The first time, click <b>Open Anyway</b> in Privacy &amp; Security. That's it.</p></div>
+  </section>
+</div>
+
+<!-- ======================= CLIPPER ======================= -->
+<div class="view" data-view="clipper" data-app="clipper" data-title="Clipper">
+  <section>
+    <div class="wrap app-hero">
+      <div>
+        <img class="icon rv" src="assets/icons/clipper.png" alt="Clipper icon" width="84" height="84">
+        <div class="eyebrow rv">Window snapping</div>
+        <h1 class="rv">Clipper</h1>
+        <p class="lead rv" style="--d:1">Snap, resize and pin your windows, calmly. Drag a window to an edge, or use a shortcut, and it clicks neatly into place.</p>
+        <div class="btns rv" style="--d:2"><a class="btn btn-primary" href="https://github.com/fortunehrjr/Clipper/releases/latest/download/Clipper.dmg">Download</a><a class="btn btn-soft" href="#clipper/use">Shortcuts</a></div>
+        <div class="chips rv" style="--d:3"><span class="chip">macOS 14+</span><span class="chip">Apple silicon &amp; Intel</span><span class="chip">Lives in the menu bar</span></div>
+      </div>
+      <div class="stage rv mock" style="--d:2">
+        <div style="width:100%;display:grid;justify-items:center">
+          <div class="desk">
+            <div class="bar">📎</div>
+            <div class="ghost"></div>
+            <div class="cw cw-a"><i></i><s></s><s></s><s></s></div>
+            <div class="cw cw-b"><i></i><s></s><s></s><s></s></div>
+            <svg class="cursor" viewBox="0 0 24 24"><path d="M3 2l7 19 2.5-7.5L20 11z" fill="#111" stroke="#fff" stroke-width="1.5"/></svg>
+          </div>
+          <div class="keys"><kbd class="press" style="--k:k-clip">⌃</kbd><kbd class="press" style="--k:k-clip">⌥</kbd><kbd class="press" style="--k:k-clip">→</kbd></div>
+        </div>
+      </div>
     </div>
-    <div class="btn-row" style="justify-content:center"><a class="btn btn-primary" href="install.html">Full install guide <span>→</span></a></div>
-  </div>
-</section>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="sec-head rv"><div class="eyebrow">What you get</div><h2>Tidy windows without thinking about it</h2></div>
+      <div class="grid3">
+        <div class="feat rv"><div class="ico">◧</div><h3>Snap to the edges</h3><p>Left or right edge for half the screen, corners for quarters, the top to fill it.</p></div>
+        <div class="feat rv" style="--d:1"><div class="ico">⌥</div><h3>Keyboard shortcuts</h3><p>⌃⌥ plus an arrow. Press again to cycle through ½, ⅔ and ⅓.</p></div>
+        <div class="feat rv" style="--d:2"><div class="ico">⇔</div><h3>Resize together</h3><p>Drag the edge between two windows and both follow, like a shared divider.</p></div>
+        <div class="feat rv"><div class="ico">🔒</div><h3>Lock in place</h3><p>⌃⌥L pins a window. If anything moves it, it slides right back.</p></div>
+        <div class="feat rv" style="--d:1"><div class="ico">▦</div><h3>Thirds and more</h3><p>First, center and last thirds, two-thirds, center, fill and restore.</p></div>
+        <div class="feat rv" style="--d:2"><div class="ico">✦</div><h3>Guided tour</h3><p>An animated tour shows every move, and you can replay it any time.</p></div>
+      </div>
+    </div>
+  </section>
+  <section id="clipper-use">
+    <div class="wrap grid2">
+      <div class="rv">
+        <div class="eyebrow">Shortcuts</div><h2>Your hands never leave the keyboard</h2>
+        <div class="table-wrap" style="margin-top:24px"><table class="table">
+          <tr><th>Keys</th><th>Result</th></tr>
+          <tr><td><kbd>⌃</kbd> <kbd>⌥</kbd> <kbd>←</kbd></td><td>Left half, then ⅔, then ⅓</td></tr>
+          <tr><td><kbd>⌃</kbd> <kbd>⌥</kbd> <kbd>→</kbd></td><td>Right half, then ⅔, then ⅓</td></tr>
+          <tr><td><kbd>⌃</kbd> <kbd>⌥</kbd> <kbd>↑</kbd></td><td>Top half</td></tr>
+          <tr><td><kbd>⌃</kbd> <kbd>⌥</kbd> <kbd>↓</kbd></td><td>Bottom half</td></tr>
+          <tr><td><kbd>⌃</kbd> <kbd>⌥</kbd> <kbd>L</kbd></td><td>Lock / unlock the window</td></tr>
+        </table></div>
+      </div>
+      <div class="rv" style="--d:1">
+        <div class="eyebrow">How to use it</div><h2>Three moves to learn</h2>
+        <div class="steps" style="margin-top:26px">
+          <div class="step"><div><h3>Allow Accessibility</h3><p>Clipper asks once. Switch it on in Privacy &amp; Security › Accessibility. The welcome window carries on by itself.</p></div></div>
+          <div class="step"><div><h3>Drag to an edge</h3><p>A soft outline shows where the window will land. Let go and it snaps.</p></div></div>
+          <div class="step"><div><h3>Use the peg</h3><p>Layouts, settings and the tour are under the peg icon in your menu bar.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap notes">
+      <div class="note rv"><span class="em">🔐</span><p><b>First time only:</b> macOS says it can't verify Clipper because it's not from the App Store. Open <b>System Settings › Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b>. <a href="#install">Install guide ›</a></p></div>
+    </div>
+  </section>
+  <section><div class="wrap pager rv"><a href="#stash"><img src="assets/icons/stash.png" alt="" width="42" height="42"><div><small>Previous</small><b>Stash</b></div></a><a class="next" href="#ferry"><div><small>Next</small><b>Ferry</b></div><img src="assets/icons/ferry.png" alt="" width="42" height="42"></a></div></section>
+</div>
+
+<!-- ======================= FERRY ======================= -->
+<div class="view" data-view="ferry" data-app="ferry" data-title="Ferry">
+  <section>
+    <div class="wrap app-hero">
+      <div>
+        <img class="icon rv" src="assets/icons/ferry.png" alt="Ferry icon" width="84" height="84">
+        <div class="eyebrow rv">File copies</div>
+        <h1 class="rv">Ferry</h1>
+        <p class="lead rv" style="--d:1">See every file copy: speed, progress and time left. Ferry pops up when you copy to or from a drive, and stays out of the way the rest of the time.</p>
+        <div class="btns rv" style="--d:2"><a class="btn btn-primary" href="https://github.com/fortunehrjr/Ferry/releases/latest/download/Ferry.dmg">Download</a><a class="btn btn-soft" href="#ferry/use">How it works</a></div>
+        <div class="chips rv" style="--d:3"><span class="chip">macOS 26+</span><span class="chip">Apple silicon &amp; Intel</span><span class="chip">0% CPU when idle</span></div>
+      </div>
+      <div class="stage rv mock" style="--d:2">
+        <div class="fp">
+          <div class="fp-head"><div class="fp-badge">⇣</div><div><b>Copying to Day 2 Footage</b><small>From Samsung T7 · 24 files</small></div><div class="fp-pct"></div></div>
+          <div class="fp-chart"><svg viewBox="0 0 300 84" preserveAspectRatio="none">
+            <defs><linearGradient id="fg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3366ff" stop-opacity=".4"/><stop offset="1" stop-color="#00c6e0" stop-opacity=".04"/></linearGradient></defs>
+            <path class="fp-area" fill="url(#fg)" d="M0 84 L0 70 L18 30 L40 24 L62 30 L84 22 L106 28 L128 20 L150 26 L172 18 L194 26 L216 22 L238 30 L260 20 L282 24 L300 22 L300 84 Z"/>
+            <path class="fp-line" fill="none" stroke="#3366ff" stroke-width="2" stroke-linejoin="round" d="M0 70 L18 30 L40 24 L62 30 L84 22 L106 28 L128 20 L150 26 L172 18 L194 26 L216 22 L238 30 L260 20 L282 24 L300 22"/>
+          </svg></div>
+          <div class="fp-bar"><i></i></div>
+          <div class="fp-stats"><div><small>Speed</small><b>412 MB/s</b></div><div><small>Size</small><b>40 GB</b></div><div><small>Time left</small><b class="fp-left"></b></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="ferry-use">
+    <div class="wrap">
+      <div class="sec-head rv"><div class="eyebrow">What you get</div><h2>Everything Finder's copy bar doesn't tell you</h2></div>
+      <div class="grid3">
+        <div class="feat rv"><div class="ico">%</div><h3>Big, clear progress</h3><p>A large percentage, a progress bar, "18 GB of 40 GB" and an honest time left.</p></div>
+        <div class="feat rv" style="--d:1"><div class="ico">⛰</div><h3>The speed mountain</h3><p>A live graph of copy speed, so you can see slowdowns as they happen.</p></div>
+        <div class="feat rv" style="--d:2"><div class="ico">⧉</div><h3>Several copies at once</h3><p>Each copy gets its own row with its own %, size and speed, just like Finder.</p></div>
+        <div class="feat rv"><div class="ico">⬆</div><h3>Always on top</h3><p>The floating window sits above every app, even full-screen ones. Or turn that off.</p></div>
+        <div class="feat rv" style="--d:1"><div class="ico">✕</div><h3>Cancel any copy</h3><p>Two clicks to cancel, so a stray click never stops a long copy.</p></div>
+        <div class="feat rv" style="--d:2"><div class="ico">◐</div><h3>Liquid Glass</h3><p>The translucent macOS look, with a switch for solid cards if you prefer.</p></div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap grid2">
+      <div class="rv">
+        <div class="eyebrow">How to use it</div><h2>Copy like you always do</h2>
+        <div class="steps" style="margin-top:26px">
+          <div class="step"><div><h3>Install and open it once</h3><p>Ferry starts by itself at login after that. Look for ⇅ in the menu bar.</p></div></div>
+          <div class="step"><div><h3>Copy files in Finder</h3><p>Drag footage to your SSD, or from a card to your Mac. Ferry pops up right away.</p></div></div>
+          <div class="step"><div><h3>Watch it, or don't</h3><p>Shrink it with the chevron, hide it with ✕. Ferry remembers your choice.</p></div></div>
+          <div class="step"><div><h3>Done</h3><p>It shows "Copy complete" with the average speed, then slips away. Past copies are in History.</p></div></div>
+        </div>
+      </div>
+      <div class="rv" style="--d:1">
+        <div class="eyebrow">Settings</div>
+        <div class="table-wrap"><table class="table">
+          <tr><th>Setting</th><th>What it does</th></tr>
+          <tr><td>Show: Ferry / Both / Finder</td><td>Pick which copy window you see. "Ferry" tucks Finder's window off-screen.</td></tr>
+          <tr><td>Keep above all windows</td><td>Floating window stays on top of every app.</td></tr>
+          <tr><td>Liquid Glass</td><td>Translucent or solid look.</td></tr>
+          <tr><td>Menu bar speed</td><td>Show live MB/s next to the icon.</td></tr>
+          <tr><td>Sensitivity</td><td>Catch every copy, or only big ones.</td></tr>
+          <tr><td>Open at login</td><td>Keep Ferry quietly running in the background.</td></tr>
+        </table></div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap notes">
+      <div class="note rv"><span class="em">🔐</span><p><b>First time only:</b> macOS says it can't verify Ferry because it's not from the App Store. Open <b>System Settings › Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b>. <a href="#install">Install guide ›</a></p></div>
+      <div class="note rv"><span class="em">🪟</span><p><b>Hiding Finder's window</b> ("Ferry" mode) needs Accessibility permission: <b>System Settings › Privacy &amp; Security › Accessibility</b>, switch on Ferry.</p></div>
+      <div class="note rv"><span class="em">⏸</span><p>Copies can be cancelled but not paused, because Finder doesn't let other apps pause its copies.</p></div>
+    </div>
+  </section>
+  <section><div class="wrap pager rv"><a href="#clipper"><img src="assets/icons/clipper.png" alt="" width="42" height="42"><div><small>Previous</small><b>Clipper</b></div></a><a class="next" href="#now-playing"><div><small>Next</small><b>Now Playing</b></div><img src="assets/icons/now-playing.png" alt="" width="42" height="42"></a></div></section>
+</div>
+
+<!-- ======================= NOW PLAYING ======================= -->
+<div class="view" data-view="now-playing" data-app="now-playing" data-title="Now Playing">
+  <section>
+    <div class="wrap app-hero">
+      <div>
+        <img class="icon rv" src="assets/icons/now-playing.png" alt="Now Playing icon" width="84" height="84">
+        <div class="eyebrow rv">Music</div>
+        <h1 class="rv">Now <span class="grad">Playing</span></h1>
+        <p class="lead rv" style="--d:1">Spotify, right in your menu bar and Notification Center. Album art, the song, and every control you need, without opening Spotify.</p>
+        <div class="btns rv" style="--d:2"><a class="btn btn-primary" href="https://github.com/fortunehrjr/Now-Playing/releases/latest/download/Now-Playing.dmg">Download</a><a class="btn btn-soft" href="#now-playing/use">How to use</a></div>
+        <div class="chips rv" style="--d:3"><span class="chip">macOS 14+</span><span class="chip">Apple silicon &amp; Intel</span><span class="chip">Needs Spotify</span></div>
+      </div>
+      <div class="stage rv mock" style="--d:2">
+        <div class="np">
+          <div class="np-top"><div class="np-art"></div><div><small>Playing from album</small><b>Midnight Drive</b><span>The Night Owls</span><div class="eq"><i></i><i></i><i></i><i></i><i></i></div></div></div>
+          <div class="np-bar"><i></i></div>
+          <div class="np-times"><span>1:02</span><span>3:34</span></div>
+          <div class="np-ctrls"><span class="on">⤨</span><span>⏮</span><span class="play">❚❚</span><span>⏭</span><span>↻</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="sec-head rv"><div class="eyebrow">What you get</div><h2>Your music, one click away</h2></div>
+      <div class="grid3">
+        <div class="feat rv"><div class="ico">♪</div><h3>Menu bar mini player</h3><p>Click the note for art, song, artist, progress and controls.</p></div>
+        <div class="feat rv" style="--d:1"><div class="ico">▤</div><h3>Widgets in three sizes</h3><p>Small, medium and large Notification Center widgets with a live preview.</p></div>
+        <div class="feat rv" style="--d:2"><div class="ico">⏯</div><h3>Full controls</h3><p>Play, pause, skip, go back, shuffle and repeat, all sent straight to Spotify.</p></div>
+        <div class="feat rv"><div class="ico">◑</div><h3>Make it yours</h3><p>Pick the background and choose which buttons, times and headers show.</p></div>
+        <div class="feat rv" style="--d:1"><div class="ico">〰</div><h3>Song in the menu bar</h3><p>Optionally show the song title next to the icon.</p></div>
+        <div class="feat rv" style="--d:2"><div class="ico">⚡</div><h3>Starts with your Mac</h3><p>Launch at login, with or without a Dock icon.</p></div>
+      </div>
+    </div>
+  </section>
+  <section id="now-playing-use">
+    <div class="wrap grid2">
+      <div class="rv">
+        <div class="eyebrow">How to use it</div><h2>Set up in three steps</h2>
+        <div class="steps" style="margin-top:26px">
+          <div class="step"><div><h3>Open Now Playing</h3><p>The main window shows a live preview of the player.</p></div></div>
+          <div class="step"><div><h3>Allow it to control Spotify</h3><p>macOS asks once: "Now Playing wants to control Spotify". Click <b>OK</b>.</p></div></div>
+          <div class="step"><div><h3>Add the widget</h3><p>Click the date and time in the menu bar › <b>Edit Widgets</b> › search <b>Now Playing</b>.</p></div></div>
+        </div>
+      </div>
+      <div class="rv" style="--d:1">
+        <div class="eyebrow">Settings</div>
+        <div class="table-wrap"><table class="table">
+          <tr><th>Setting</th><th>What it does</th></tr>
+          <tr><td>Size preview</td><td>See the small, medium and large widget exactly.</td></tr>
+          <tr><td>Background</td><td>Choose the player's background style.</td></tr>
+          <tr><td>Shuffle &amp; repeat</td><td>Show or hide those buttons.</td></tr>
+          <tr><td>Elapsed &amp; total time</td><td>Times under the progress bar.</td></tr>
+          <tr><td>Album header</td><td>"Playing from album" on top.</td></tr>
+          <tr><td>Menu bar &amp; Dock</td><td>Icon only, icon plus song, Dock or no Dock.</td></tr>
+        </table></div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap notes">
+      <div class="note rv"><span class="em">🔐</span><p><b>First time only:</b> macOS says it can't verify Now Playing because it's not from the App Store. Open <b>System Settings › Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b>. <a href="#install">Install guide ›</a></p></div>
+      <div class="note rv"><span class="em">🧩</span><p>The <b>widget</b> needs the app signed with your Apple ID in Xcode. The menu bar player works either way. <a href="#updates">How to rebuild ›</a></p></div>
+    </div>
+  </section>
+  <section><div class="wrap pager rv"><a href="#ferry"><img src="assets/icons/ferry.png" alt="" width="42" height="42"><div><small>Previous</small><b>Ferry</b></div></a><a class="next" href="#orbit"><div><small>Next</small><b>Orbit</b></div><img src="assets/icons/orbit.png" alt="" width="42" height="42"></a></div></section>
+</div>
+
+<!-- ======================= ORBIT ======================= -->
+<div class="view" data-view="orbit" data-app="orbit" data-title="Orbit">
+  <section>
+    <div class="wrap app-hero">
+      <div>
+        <img class="icon rv" src="assets/icons/orbit.png" alt="Orbit icon" width="84" height="84">
+        <div class="eyebrow rv">Focus</div>
+        <h1 class="rv">Orbit</h1>
+        <p class="lead rv" style="--d:1">A calm focus timer with your music built in. Focus, take a break, repeat, with a glowing dial that keeps you on track.</p>
+        <div class="btns rv" style="--d:2"><a class="btn btn-primary" href="https://github.com/fortunehrjr/Orbit/releases/latest/download/Orbit.dmg">Download</a><a class="btn btn-soft" href="#orbit/use">How to use</a></div>
+        <div class="chips rv" style="--d:3"><span class="chip">macOS 26+</span><span class="chip">Apple silicon &amp; Intel</span><span class="chip">Pomodoro style</span></div>
+      </div>
+      <div class="stage rv mock" style="--d:2">
+        <div class="ob">
+          <div class="ob-modes"><span>Focus</span><span>Short Break</span><span>Long Break</span></div>
+          <div class="ob-dial">
+            <svg viewBox="0 0 230 230">
+              <circle cx="115" cy="115" r="100" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="12"/>
+              <circle class="ob-ring" cx="115" cy="115" r="100" fill="none" stroke="#8B5CF6" stroke-width="12" stroke-linecap="round"/>
+              <g class="ob-dot"><circle cx="215" cy="115" r="9" fill="#F6C972"/></g>
+            </svg>
+            <div class="ob-time"><b></b><small>Deep work</small></div>
+          </div>
+          <div class="ob-task">Studying <b>Biology revision</b> · 3 today</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="sec-head rv"><div class="eyebrow">What you get</div><h2>Focus that feels good</h2></div>
+      <div class="grid3">
+        <div class="feat rv"><div class="ico">◔</div><h3>The dial</h3><p>A big, glowing ring counts down. The last ten seconds glow brighter.</p></div>
+        <div class="feat rv" style="--d:1"><div class="ico">↻</div><h3>Focus &amp; breaks</h3><p>Focus 25, short break 5, long break 15. Change any of them.</p></div>
+        <div class="feat rv" style="--d:2"><div class="ico">♫</div><h3>Music built in</h3><p>Control Spotify, Apple Music or YouTube, or play music files from your Mac.</p></div>
+        <div class="feat rv"><div class="ico">⧈</div><h3>Mini timer</h3><p>A small floating timer keeps the countdown in view while you work.</p></div>
+        <div class="feat rv" style="--d:1"><div class="ico">3</div><h3>Countdown start</h3><p>A short 3·2·1 before each session. Turn it off if you like.</p></div>
+        <div class="feat rv" style="--d:2"><div class="ico">✓</div><h3>Celebrate progress</h3><p>Finished sessions are celebrated and counted for today.</p></div>
+      </div>
+    </div>
+  </section>
+  <section id="orbit-use">
+    <div class="wrap grid2">
+      <div class="rv">
+        <div class="eyebrow">How to use it</div><h2>One session at a time</h2>
+        <div class="steps" style="margin-top:26px">
+          <div class="step"><div><h3>Pick a mode</h3><p>Focus (purple), Short Break (teal) or Long Break (blue).</p></div></div>
+          <div class="step"><div><h3>Name your task</h3><p>Type what you're studying so you stay on one thing.</p></div></div>
+          <div class="step"><div><h3>Press start</h3><p>3·2·1, then the dial counts down. Allow notifications to hear when it ends.</p></div></div>
+          <div class="step"><div><h3>Add music</h3><p>Whatever plays in Spotify, Music or YouTube shows up. Or drop audio files onto the music card.</p></div></div>
+        </div>
+      </div>
+      <div class="rv" style="--d:1">
+        <div class="eyebrow">Menu commands</div>
+        <div class="table-wrap"><table class="table">
+          <tr><th>Command</th><th>What it does</th></tr>
+          <tr><td>Reset</td><td>Start the current session over.</td></tr>
+          <tr><td>Skip to Next Session</td><td>Jump to the next part of the cycle.</td></tr>
+          <tr><td>Toggle Mini Timer</td><td>Show or hide the floating timer.</td></tr>
+          <tr><td>Play / Pause · Next · Previous</td><td>Control your music.</td></tr>
+          <tr><td>Play Music from This Mac…</td><td>Pick audio files or a folder.</td></tr>
+        </table></div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap notes">
+      <div class="note rv"><span class="em">🔐</span><p><b>First time only:</b> macOS says it can't verify Orbit because it's not from the App Store. Open <b>System Settings › Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b>. <a href="#install">Install guide ›</a></p></div>
+      <div class="note rv"><span class="em">🎵</span><p>The first time Orbit reads your music, macOS asks <b>"Orbit wants to control Spotify"</b> (or Music, Chrome, Safari). Click <b>OK</b>.</p></div>
+    </div>
+  </section>
+  <section><div class="wrap pager rv"><a href="#now-playing"><img src="assets/icons/now-playing.png" alt="" width="42" height="42"><div><small>Previous</small><b>Now Playing</b></div></a><a class="next" href="#stash"><div><small>Next</small><b>Stash</b></div><img src="assets/icons/stash.png" alt="" width="42" height="42"></a></div></section>
+</div>
+
+<!-- ======================= STASH ======================= -->
+<div class="view" data-view="stash" data-app="stash" data-title="Stash">
+  <section>
+    <div class="wrap app-hero">
+      <div>
+        <img class="icon rv" src="assets/icons/stash.png" alt="Stash icon" width="84" height="84">
+        <div class="eyebrow rv">Clipboard</div>
+        <h1 class="rv">Stash</h1>
+        <p class="lead rv" style="--d:1">Everything you copy, kept in one calm, tidy place. Press <b>⌃H</b> and your clipboard history slides up from the corner, ready to search and paste.</p>
+        <div class="btns rv" style="--d:2"><a class="btn btn-primary" href="https://github.com/fortunehrjr/Stash/releases/latest/download/Stash.dmg">Download</a><a class="btn btn-soft" href="#stash/use">How to use</a></div>
+        <div class="chips rv" style="--d:3"><span class="chip">macOS 26+</span><span class="chip">Apple silicon &amp; Intel</span><span class="chip">Liquid Glass</span></div>
+      </div>
+      <div class="stage rv mock" style="--d:2">
+        <div style="width:100%;display:grid;justify-items:center">
+          <div class="desk">
+            <div class="bar">▤ 9:41</div>
+            <div class="sp">
+              <div class="sp-h">Stash</div>
+              <div class="sp-q">⌕ Search your clips</div>
+              <div class="sp-rows">
+                <div class="sp-sel"></div>
+                <div class="sp-r"><span class="sp-i" style="--c:#3b82f6">≡</span><b>Meeting notes: ship v1.0 Friday</b><small>⌘1</small></div>
+                <div class="sp-r"><span class="sp-i" style="--c:#6366f1">↗</span><b>developer.apple.com/design</b><small>⌘2</small></div>
+                <div class="sp-r"><span class="sp-i" style="--c:#5e5ce6;background:#5e5ce6"></span><b style="font-family:var(--mono)">#5E5CE6</b><small>⌘3</small></div>
+                <div class="sp-r"><span class="sp-i" style="--c:#a855f7">▧</span><b>Image · 1440 × 900</b><small>⌘4</small></div>
+                <div class="sp-r"><span class="sp-i" style="--c:#3b82f6">≡</span><b>let total = items.reduce(0, +)</b><small>⌘5</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="keys"><kbd class="press" style="--k:k-ctl">⌃</kbd><kbd class="press" style="--k:k-ctl">H</kbd><kbd class="press" style="--k:k-down">↓</kbd><kbd class="press" style="--k:k-ret">↩</kbd></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="sec-head rv"><div class="eyebrow">What you get</div><h2>Never lose a copy again</h2></div>
+      <div class="grid3">
+        <div class="feat rv"><div class="ico">⌘</div><h3>Copy like always</h3><p>Use ⌘C and ⌘X as you do now. Stash quietly saves text, links, colors, images and files.</p></div>
+        <div class="feat rv" style="--d:1"><div class="ico">⌃</div><h3>Pops up from the corner</h3><p>Press ⌃H in any app and a Liquid Glass panel slides up from the bottom right. Change the shortcut any time.</p></div>
+        <div class="feat rv" style="--d:2"><div class="ico">⌕</div><h3>Search &amp; filter</h3><p>Start typing to find anything. Filter by text, links, images, files or pinned.</p></div>
+        <div class="feat rv"><div class="ico">↩</div><h3>Paste for you</h3><p>Pick a clip and it pastes right where you were typing. ⌘1–⌘9 paste the first nine instantly.</p></div>
+        <div class="feat rv" style="--d:1"><div class="ico">📌</div><h3>Pin &amp; auto-tidy</h3><p>Keep the last 50 to 500 copies (100 by default). Older ones are deleted automatically; pinned clips stay.</p></div>
+        <div class="feat rv" style="--d:2"><div class="ico">🔐</div><h3>Private by design</h3><p>Your history never leaves your Mac, and copies from password managers are skipped.</p></div>
+      </div>
+    </div>
+  </section>
+  <section id="stash-use">
+    <div class="wrap grid2">
+      <div class="rv">
+        <div class="eyebrow">How to use it</div><h2>Copy now, paste whenever</h2>
+        <div class="steps" style="margin-top:26px">
+          <div class="step"><div><h3>Open Stash</h3><p>A short tour shows you around (Next, Back or Skip). Stash then lives in your menu bar.</p></div></div>
+          <div class="step"><div><h3>Copy as usual</h3><p>Everything you copy with ⌘C or ⌘X is saved automatically.</p></div></div>
+          <div class="step"><div><h3>Press ⌃H</h3><p>Your history pops up. Type to search, choose with ↑ ↓, press ↩ to paste. Or just click a clip.</p></div></div>
+          <div class="step"><div><h3>Allow pasting (optional)</h3><p>Allow Accessibility once and Stash pastes for you. Without it, Stash copies the clip and you press ⌘V.</p></div></div>
+        </div>
+      </div>
+      <div class="rv" style="--d:1">
+        <div class="eyebrow">Keyboard</div>
+        <div class="table-wrap"><table class="table">
+          <tr><th>Keys</th><th>What it does</th></tr>
+          <tr><td>⌃H</td><td>Open or close your history.</td></tr>
+          <tr><td>↑ ↓ then ↩</td><td>Choose a clip and paste it.</td></tr>
+          <tr><td>⌘1 … ⌘9</td><td>Paste one of the first nine clips.</td></tr>
+          <tr><td>⌘↩</td><td>Copy only, without pasting.</td></tr>
+          <tr><td>⌘P</td><td>Pin or unpin a clip.</td></tr>
+          <tr><td>⌘⌫</td><td>Delete a clip.</td></tr>
+          <tr><td>Tab</td><td>Switch filter.</td></tr>
+          <tr><td>Esc</td><td>Clear the search, or close.</td></tr>
+        </table></div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap notes">
+      <div class="note rv"><span class="em">🔐</span><p><b>First time only:</b> macOS says it can't verify Stash because it's not from the App Store. Open <b>System Settings › Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b>. <a href="#install">Install guide ›</a></p></div>
+      <div class="note rv"><span class="em">🍃</span><p><b>Light on your battery:</b> 0% CPU when idle and about 12 MB of memory. Stash only reads the clipboard when something new is copied.</p></div>
+    </div>
+  </section>
+  <section><div class="wrap pager rv"><a href="#orbit"><img src="assets/icons/orbit.png" alt="" width="42" height="42"><div><small>Previous</small><b>Orbit</b></div></a><a class="next" href="#clipper"><div><small>Next</small><b>Clipper</b></div><img src="assets/icons/clipper.png" alt="" width="42" height="42"></a></div></section>
+</div>
+
+<!-- ======================= INSTALL ======================= -->
+<div class="view" data-view="install" data-title="Install">
+  <section>
+    <div class="wrap center">
+      <div class="eyebrow rv">Install</div>
+      <h1 class="rv">Install in a <span class="grad">minute</span></h1>
+      <p class="lead rv" style="--d:1;margin-top:18px">The same steps work for every app, including the one-time "Open Anyway" step.</p>
+    </div>
+  </section>
+  <section>
+    <div class="wrap grid2">
+      <div class="steps rv">
+        <div class="step"><div><h3>Open the installer</h3><p>Download the app's <code>.dmg</code>, then double-click it. A window opens with the app and an Applications shortcut.</p></div></div>
+        <div class="step"><div><h3>Drag it to Applications</h3><p>Drop the app icon onto <b>Applications</b>. Then eject the installer (the ⏏ next to it in Finder).</p></div></div>
+        <div class="step"><div><h3>Open it</h3><p>Open <b>Applications</b> and double-click the app. Menu bar apps (Clipper, Ferry, Now Playing, Stash) show an icon at the top right.</p></div></div>
+        <div class="step"><div><h3>Allow it the first time</h3><p>macOS says it "cannot verify" the app, because it's not from the App Store. Open <b>System Settings › Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b>, then confirm. Only once.</p></div></div>
+      </div>
+      <div class="panel rv" style="--d:1">
+        <h3>Download an installer</h3>
+        <div class="dl-list">
+          <a href="https://github.com/fortunehrjr/Clipper/releases/latest/download/Clipper.dmg"><img src="assets/icons/clipper.png" alt="" width="30" height="30">Clipper<span>↓</span></a>
+          <a href="https://github.com/fortunehrjr/Ferry/releases/latest/download/Ferry.dmg"><img src="assets/icons/ferry.png" alt="" width="30" height="30">Ferry<span>↓</span></a>
+          <a href="https://github.com/fortunehrjr/Now-Playing/releases/latest/download/Now-Playing.dmg"><img src="assets/icons/now-playing.png" alt="" width="30" height="30">Now Playing<span>↓</span></a>
+          <a href="https://github.com/fortunehrjr/Orbit/releases/latest/download/Orbit.dmg"><img src="assets/icons/orbit.png" alt="" width="30" height="30">Orbit<span>↓</span></a>
+          <a href="https://github.com/fortunehrjr/Stash/releases/latest/download/Stash.dmg"><img src="assets/icons/stash.png" alt="" width="30" height="30">Stash<span>↓</span></a>
+        </div>
+        <p style="margin-top:16px;font-size:.9rem">All five are universal apps: they run on Apple silicon and Intel Macs.</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="sec-head rv"><div class="eyebrow">Permissions</div><h2>What each app asks for, and why</h2></div>
+      <div class="table-wrap rv"><table class="table">
+        <tr><th>App</th><th>Needs</th><th>Asks for</th><th>Why</th></tr>
+        <tr><td>Clipper</td><td>macOS 14+</td><td>Accessibility</td><td>To move and resize other apps' windows.</td></tr>
+        <tr><td>Ferry</td><td>macOS 26+</td><td>Accessibility (optional)</td><td>Only to hide Finder's copy window in "Ferry" mode.</td></tr>
+        <tr><td>Now Playing</td><td>macOS 14+</td><td>Control Spotify</td><td>To read the current song and send play / skip.</td></tr>
+        <tr><td>Orbit</td><td>macOS 26+</td><td>Notifications, control music apps</td><td>To tell you when a session ends and show your music.</td></tr>
+        <tr><td>Stash</td><td>macOS 26+</td><td>Accessibility (optional)</td><td>Only to paste a clip for you. Without it, Stash copies and you press ⌘V.</td></tr>
+      </table></div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap grid2">
+      <div class="panel rv"><h3>Share with a friend</h3><p>Send them the link to this website, or the <code>.dmg</code> itself by AirDrop or Messages. Every installer includes a "How to Install" note that walks them through the Open Anyway step.</p></div>
+      <div class="panel rv" style="--d:1"><h3>Uninstall</h3><p>Quit the app from its menu, then drag it from Applications to the Trash. To stop an app opening at login, also check <b>System Settings › General › Login Items</b>.</p></div>
+    </div>
+  </section>
+</div>
+
+<!-- ======================= UPDATES ======================= -->
+<div class="view" data-view="updates" data-title="Updates">
+  <section>
+    <div class="wrap center">
+      <div class="eyebrow rv">New versions</div>
+      <h1 class="rv">Updating is <span class="grad">painless</span></h1>
+      <p class="lead rv" style="--d:1;margin-top:18px">Got a newer version from a friend, or built one yourself? Here's how to swap it in without losing your settings.</p>
+      <div class="seg rv" style="--d:2" role="group" aria-label="Who is reading"><button data-who="everyone" aria-pressed="true">For everyone</button><button data-who="dev" aria-pressed="false">For developers</button></div>
+    </div>
+  </section>
+  <section class="for-all">
+    <div class="wrap grid2">
+      <div class="steps rv">
+        <div class="step"><div><h3>Quit the app</h3><p>Use Quit in its menu bar icon or app menu, so the old copy isn't running.</p></div></div>
+        <div class="step"><div><h3>Open the new .dmg</h3><p>Double-click the new installer you received.</p></div></div>
+        <div class="step"><div><h3>Drag to Applications, choose Replace</h3><p>macOS asks whether to replace the existing app. Click <b>Replace</b>.</p></div></div>
+        <div class="step"><div><h3>Open it again</h3><p>Your settings stay exactly as they were. If an app asks for a permission again, just allow it.</p></div></div>
+      </div>
+      <div class="panel rv" style="--d:1">
+        <h3>What's kept when you update</h3>
+        <ul>
+          <li>All your settings and choices</li>
+          <li>Ferry's transfer history</li>
+          <li>Orbit's timer lengths and today's sessions</li>
+          <li>Stash's clipboard history and pinned clips</li>
+          <li>Clipper's and Stash's Accessibility permission</li>
+        </ul>
+        <p style="margin-top:12px">Ferry may ask again for Accessibility permission if you use its "Ferry" mode.</p>
+      </div>
+    </div>
+  </section>
+  <section class="for-dev">
+    <div class="wrap">
+      <p class="lead rv">Each app has its own <a href="https://github.com/fortunehrjr?tab=repositories">GitHub repo</a>. You need <b>Xcode 26+</b>. Ferry and Now Playing use <a href="https://github.com/yonaskolb/XcodeGen">XcodeGen</a> (<code>brew install xcodegen</code>).</p>
+      <div class="grid2" style="margin-top:28px;gap:20px">
+        <div class="panel rv"><h3 class="app-title"><img src="assets/icons/clipper.png" alt="" width="30" height="30">Clipper</h3>
+<pre data-copy><span class="c"># Compiles with swiftc and installs to /Applications</span>
+git clone https://github.com/fortunehrjr/Clipper && cd Clipper
+./build.sh --install</pre></div>
+        <div class="panel rv"><h3 class="app-title"><img src="assets/icons/ferry.png" alt="" width="30" height="30">Ferry</h3>
+<pre data-copy>git clone https://github.com/fortunehrjr/Ferry && cd Ferry
+xcodegen generate
+xcodebuild -project Ferry.xcodeproj -scheme Ferry \
+  -configuration Release -destination 'generic/platform=macOS' \
+  -derivedDataPath build/DD build</pre></div>
+        <div class="panel rv"><h3 class="app-title"><img src="assets/icons/now-playing.png" alt="" width="30" height="30">Now Playing</h3>
+<pre data-copy>git clone https://github.com/fortunehrjr/Now-Playing && cd Now-Playing
+xcodegen generate
+xcodebuild -project NowPlaying.xcodeproj -scheme NowPlaying \
+  -configuration Release -destination 'generic/platform=macOS' \
+  -derivedDataPath build/DD build</pre></div>
+        <div class="panel rv"><h3 class="app-title"><img src="assets/icons/orbit.png" alt="" width="30" height="30">Orbit</h3>
+<pre data-copy><span class="c"># Swift Package; output goes to dist/Orbit.app</span>
+git clone https://github.com/fortunehrjr/Orbit && cd Orbit
+./build.sh</pre></div>
+        <div class="panel rv"><h3 class="app-title"><img src="assets/icons/stash.png" alt="" width="30" height="30">Stash</h3>
+<pre data-copy><span class="c"># Swift Package; builds dist/Stash.app and installs it</span>
+git clone https://github.com/fortunehrjr/Stash && cd Stash
+./build.sh --install</pre></div>
+        <div class="panel rv"><h3>Make a new installer</h3>
+<pre data-copy>mkdir stage && cp -R Ferry.app stage/
+ln -s /Applications stage/Applications
+hdiutil create -volname Ferry -srcfolder stage \
+  -format UDZO Ferry.dmg</pre></div>
+      </div>
+      <div class="note rv" style="margin-top:20px"><span class="em">🧩</span><p><b>Widgets need signing.</b> Ferry and Now Playing include Notification Center widgets, and macOS only loads widgets from apps signed with an Apple developer identity. A free Apple ID works: add it in <b>Xcode › Settings › Accounts</b>, then pick your <b>Personal Team</b> under <b>Signing &amp; Capabilities</b> for both targets.</p></div>
+    </div>
+  </section>
+</div>
+
+<!-- ======================= BUILT WITH ======================= -->
+<div class="view" data-view="built-with" data-title="Built with">
+  <section>
+    <div class="wrap center">
+      <div class="eyebrow rv">Under the hood</div>
+      <h1 class="rv">Built <span class="grad">with</span></h1>
+      <p class="lead rv" style="--d:1;margin-top:18px">All five are native Mac apps written in Swift. No web views, no Electron, no tracking. That's why they're tiny and fast.</p>
+      <div class="seg rv" style="--d:2" role="group" aria-label="Detail level"><button data-who="everyone" aria-pressed="true">Plain English</button><button data-who="dev" aria-pressed="false">Technical</button></div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="panel rv"><h3>Shared foundation</h3><div class="stack"><span>Swift</span><span>SwiftUI</span><span>AppKit</span><span>macOS 14 – 26</span><span>Universal (Apple silicon + Intel)</span><span>Ad-hoc code signing</span></div></div>
+      <div class="grid2" style="margin-top:20px;gap:20px">
+        <div class="panel rv"><h3 class="app-title"><img src="assets/icons/clipper.png" alt="" width="30" height="30">Clipper</h3>
+          <p class="for-all">Uses the Mac's Accessibility feature (the same one screen readers use) to move and size windows, and listens for your keyboard shortcuts.</p>
+          <p class="for-dev">Built with <code>swiftc</code> from a shell script, no Xcode project. Windows move through <code>AXUIElement</code>; drag-to-snap watches mouse events; hot keys use Carbon <code>RegisterEventHotKey</code>. An identifier-based designated requirement keeps the Accessibility grant across rebuilds.</p>
+          <div class="stack"><span>AXUIElement</span><span>Carbon hot keys</span><span>NSEvent monitors</span><span>SwiftUI onboarding</span></div></div>
+        <div class="panel rv" style="--d:1"><h3 class="app-title"><img src="assets/icons/ferry.png" alt="" width="30" height="30">Ferry</h3>
+          <p class="for-all">Reads how fast each drive is reading and writing, and listens to the progress Finder already shares, to know file names, sizes and percentages.</p>
+          <p class="for-dev">IOKit <code>IOBlockStorageDriver</code> statistics give per-drive byte counters. FSEvents spots new files so Ferry can subscribe with <code>Progress.addSubscriber(forFileURL:)</code> to Finder's copy progress, which also allows <code>cancel()</code>. The window is a non-activating <code>NSPanel</code> in <code>NSGlassEffectView</code>.</p>
+          <div class="stack"><span>IOKit</span><span>FSEvents</span><span>NSProgress</span><span>Swift Charts</span><span>WidgetKit</span><span>NSGlassEffectView</span></div></div>
+        <div class="panel rv"><h3 class="app-title"><img src="assets/icons/now-playing.png" alt="" width="30" height="30">Now Playing</h3>
+          <p class="for-all">Asks Spotify what's playing, the same way the Shortcuts app can, and shows it in your menu bar and as a widget.</p>
+          <p class="for-dev">AppleScript over Apple Events (<code>NSAppleScript</code>) polls Spotify off the main thread and sends play/pause/skip. A <code>MenuBarExtra</code> hosts the mini player; a WidgetKit extension renders the same SwiftUI layouts.</p>
+          <div class="stack"><span>Apple Events</span><span>MenuBarExtra</span><span>WidgetKit</span><span>XcodeGen</span></div></div>
+        <div class="panel rv" style="--d:1"><h3 class="app-title"><img src="assets/icons/orbit.png" alt="" width="30" height="30">Orbit</h3>
+          <p class="for-all">A timer with a hand-drawn dial, plus a music card that can talk to Spotify, Music and YouTube, or play files from your Mac.</p>
+          <p class="for-dev">A Swift Package with an <code>@Observable</code> timer model. AppleScript bridges to Spotify, Music, Chrome and Safari, <code>AVFoundation</code> for local files, Liquid Glass via <code>glassEffect</code>, alerts via <code>UserNotifications</code>.</p>
+          <div class="stack"><span>Swift Package Manager</span><span>Observation</span><span>AVFoundation</span><span>Liquid Glass</span></div></div>
+        <div class="panel rv"><h3 class="app-title"><img src="assets/icons/stash.png" alt="" width="30" height="30">Stash</h3>
+          <p class="for-all">Notices each time you copy something, saves it on your Mac, and shows your history in a glass panel when you press a shortcut.</p>
+          <p class="for-dev">A tolerant timer compares <code>NSPasteboard.changeCount</code> twice a second and reads the clipboard only when it changes, skipping <code>org.nspasteboard.ConcealedType</code>. The panel is a non-activating <code>NSPanel</code> in <code>NSGlassEffectView</code>, opened by a Carbon hot key; "Paste for me" posts ⌘V with <code>CGEvent</code>.</p>
+          <div class="stack"><span>NSPasteboard</span><span>NSGlassEffectView</span><span>Carbon hot keys</span><span>CGEvent</span><span>SMAppService</span></div></div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="sec-head rv"><div class="eyebrow">Folder layout</div><h2>Where everything lives</h2></div>
+<pre class="rv">Custom Apps/
+├── README.md
+├── DMG Installers/          <span class="c"># share these</span>
+├── Custom App Website/      <span class="c"># this site</span>
+├── Clipper/
+│   ├── Clipper.app
+│   ├── Clipper.dmg
+│   ├── README.md
+│   └── Source Code/
+├── Ferry/          <span class="c"># same layout</span>
+├── Now Playing/    <span class="c"># same layout</span>
+├── Orbit/          <span class="c"># same layout</span>
+└── Stash/          <span class="c"># same layout</span></pre>
+    </div>
+  </section>
+</div>
 
 </main>
 
 <footer>
   <div class="wrap">
     <div>Custom Apps · five small Mac apps, made with care.</div>
-    <nav>
-      <a href="install.html">Install</a>
-      <a href="updates.html">Updates</a>
-      <a href="built-with.html">Built with</a>
-      <a href="https://github.com/fortunehrjr?tab=repositories">GitHub</a>
-    </nav>
+    <nav><a href="#install">Install</a><a href="#updates">Updates</a><a href="#built-with">Built with</a><a href="https://github.com/fortunehrjr?tab=repositories">GitHub</a></nav>
   </div>
 </footer>
 
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script defer src="assets/main.js?v=4"></script>
+<script src="assets/site.js?v=5"></script>
 </body>
 </html>
