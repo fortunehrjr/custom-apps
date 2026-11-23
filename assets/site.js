@@ -100,6 +100,25 @@
     pre.after(btn);
   });
 
+  // ---------- Hover glow (mouse/trackpad only) ----------
+  // One passive listener; at most one style update per frame, on the card under the cursor.
+  if (!reduce && matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    $$(".card-app, .feat, .panel, .note, .pager a, .dl-list a, .stage, .stats").forEach((el) => el.classList.add("glow"));
+    let target = null, x = 0, y = 0, frame = 0;
+    addEventListener("pointermove", (e) => {
+      const el = e.target.closest && e.target.closest(".glow");
+      if (!el) return;
+      target = el; x = e.clientX; y = e.clientY;
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        const r = target.getBoundingClientRect();
+        target.style.setProperty("--mx", `${x - r.left}px`);
+        target.style.setProperty("--my", `${y - r.top}px`);
+      });
+    }, { passive: true });
+  }
+
   // ---------- Start ----------
   document.documentElement.classList.add("js");
   const r = parse();

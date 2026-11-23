@@ -428,3 +428,60 @@ footer a { color: var(--muted); }
   .js .rv { opacity: 1; transform: none; }
   ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
 }
+
+/* =============================================================
+   Hover glow: a spotlight that follows the cursor plus a lit edge.
+   Only on devices with a real pointer. site.js sets --mx / --my on
+   the one card under the cursor; everything else is opacity.
+   ============================================================= */
+.feat { padding: 22px; margin: -22px; border-radius: 20px; }
+.grid3 { row-gap: 14px; column-gap: 14px; }
+.grid3 .feat { margin: 0; }
+@media (hover: hover) and (pointer: fine) {
+  .glow { position: relative; isolation: isolate; --mx: 50%; --my: 50%; }
+  .glow::before, .glow::after {
+    content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+    opacity: 0; transition: opacity 0.35s var(--ease);
+  }
+  /* soft spotlight inside */
+  .glow::before {
+    z-index: -1;
+    background: radial-gradient(260px circle at var(--mx) var(--my), color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%);
+  }
+  /* lit border that tracks the cursor */
+  .glow::after {
+    padding: 1px;
+    background: radial-gradient(200px circle at var(--mx) var(--my), color-mix(in srgb, var(--accent) 85%, white), transparent 70%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+  }
+  .glow:hover::before, .glow:hover::after { opacity: 1; }
+
+  .feat { transition: background 0.35s var(--ease), transform 0.35s var(--ease); }
+  .feat:hover { background: color-mix(in srgb, var(--bg2) 70%, transparent); }
+  .feat .ico { transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s; }
+  .feat:hover .ico { transform: translateY(-3px) rotate(-6deg) scale(1.08); box-shadow: 0 8px 18px -6px color-mix(in srgb, var(--accent) 55%, transparent); }
+
+  .card-app img { transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
+  .card-app:hover img { transform: translateY(-4px) rotate(-4deg) scale(1.06); }
+  .card-app:hover { box-shadow: var(--shadow), 0 20px 50px -24px color-mix(in srgb, var(--accent) 60%, transparent); }
+
+  .panel, .note, .pager a, .dl-list a, .stats { transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease); }
+  .panel:hover, .note:hover { transform: translateY(-2px); }
+  .pager a:hover img, .dl-list a:hover img { transform: scale(1.08) rotate(-4deg); }
+  .pager img, .dl-list img { transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1); }
+
+  .stage { transition: box-shadow 0.4s var(--ease); }
+  .stage:hover { box-shadow: 0 30px 70px -40px color-mix(in srgb, var(--accent) 70%, transparent); }
+
+  .btn-primary { transition: transform 0.2s var(--ease), filter 0.2s, box-shadow 0.3s var(--ease); }
+  .btn-primary:hover { box-shadow: 0 8px 24px -8px color-mix(in srgb, var(--accent) 80%, transparent); }
+
+  .dock a { position: relative; }
+  .dock a::after {
+    content: ""; position: absolute; left: 15%; right: 15%; bottom: -10px; height: 10px; border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(10, 132, 255, 0.45), transparent); opacity: 0; transition: opacity 0.35s;
+  }
+  .dock a:hover::after { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) { .glow::before, .glow::after { display: none; } }
