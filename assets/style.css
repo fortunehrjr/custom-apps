@@ -407,3 +407,9 @@ footer a:hover { color: var(--text); }
   .blob, .scroll-hint span { animation: none !important; }
   html { scroll-behavior: auto; }
 }
+
+/* Lighter background on phones: fewer, softer blobs keep cheaper GPUs smooth */
+@media (max-width: 700px) {
+  .blob { filter: blur(40px); }
+  .blob:nth-child(n+3) { display: none; }
+}

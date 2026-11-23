@@ -8,7 +8,8 @@
 <link rel="icon" href="assets/icons/orbit.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"></noscript>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body data-app="orbit">
@@ -28,7 +29,7 @@
 <section>
   <div class="wrap app-hero">
     <div>
-      <img class="icon" src="assets/icons/orbit.png" alt="Orbit icon">
+      <img class="icon" width="96" height="96" src="assets/icons/orbit.png" alt="Orbit icon">
       <div class="eyebrow">Focus</div>
       <h1>Orbit</h1>
       <p class="lead">A calm focus timer with your music built in. Focus, take a break, repeat, with a glowing dial that keeps you on track.</p>
@@ -115,8 +116,8 @@
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="assets/main.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="assets/main.js"></script>
 </body>
 </html>
