@@ -36,6 +36,10 @@ body[data-app="orbit"] {
   --a1: #8b5cf6; --a2: #db2777; --a3: #f6c972; --a4: #14b8a6;
   --accent: #7c3aed; --grad: linear-gradient(120deg, #6d28d9, #8b5cf6 45%, #db2777);
 }
+body[data-app="stash"] {
+  --a1: #2f6bf0; --a2: #38bdf8; --a3: #1e3a8a; --a4: #818cf8;
+  --accent: #2563eb; --grad: linear-gradient(120deg, #1e40af, #2f6bf0 45%, #38bdf8);
+}
 body[data-app="now-playing"] {
   --bg: #0d0d0f;
   --surface: rgba(255, 255, 255, 0.06);
@@ -128,7 +132,7 @@ section { padding: clamp(64px, 10vw, 120px) 0; }
 .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; margin: 0; padding: 0; }
 .nav-links a {
   display: inline-flex; align-items: center; gap: 7px;
-  padding: 8px 12px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 0.92rem;
+  padding: 8px 12px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 0.92rem; white-space: nowrap;
   color: var(--muted); transition: color .2s, background .2s;
 }
 .nav-links a img { width: 18px; height: 18px; }
@@ -138,7 +142,7 @@ section { padding: clamp(64px, 10vw, 120px) 0; }
   display: none; width: 42px; height: 42px; border-radius: 12px; border: 1px solid var(--line);
   background: var(--surface); color: var(--text); font-size: 1.2rem; cursor: pointer;
 }
-@media (max-width: 960px) {
+@media (max-width: 1120px) {
   .nav-toggle { display: grid; place-items: center; }
   .nav-links {
     position: absolute; top: 66px; left: 16px; right: 16px; flex-direction: column; align-items: stretch;
@@ -188,8 +192,11 @@ body[data-app="now-playing"] .feature .ico { color: var(--accent-ink); }
 .hero .btn-row { justify-content: center; }
 .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 @media (max-width: 720px) { .tiles { grid-template-columns: 1fr; } }
+/* An odd last tile spans the full row. */
+.tiles .app-tile:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.tiles .app-tile:last-child:nth-child(odd) p { max-width: 60ch; }
 .hero-icons { display: flex; justify-content: center; gap: clamp(10px, 3vw, 26px); margin-top: 48px; flex-wrap: wrap; }
-.hero-icons a { display: block; width: clamp(74px, 12vw, 120px); transition: transform .25s; }
+.hero-icons a { display: block; width: clamp(56px, 12vw, 120px); transition: transform .25s; }
 .hero-icons a:hover { transform: translateY(-8px) rotate(-3deg) scale(1.05); }
 .hero-icons img { filter: drop-shadow(0 18px 24px rgba(40, 20, 90, .3)); }
 .scroll-hint { margin-top: 50px; color: var(--muted); font-size: .9rem; }
@@ -219,6 +226,7 @@ body[data-app="now-playing"] .feature .ico { color: var(--accent-ink); }
 .tile-now { background: linear-gradient(140deg, #1c1c20, #0f3d22 60%, #2a1f5c); }
 .tile-now h3, .tile-now .go { color: #1ed760; }
 .tile-orbit { background: linear-gradient(140deg, #4c1d95, #7c3aed 50%, #db2777); }
+.tile-stash { background: linear-gradient(140deg, #0d2a73, #2563eb 55%, #38bdf8); }
 .tag { align-self: flex-start; display: inline-block; font-size: .75rem; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: rgba(255,255,255,.2); }
 
 /* Stats strip */
@@ -392,6 +400,43 @@ footer a:hover { color: var(--text); }
 .dial .time small { opacity: .75; font-size: .82rem; }
 .orbit-task { margin-top: 16px; font-size: .85rem; opacity: .85; }
 .orbit-task b { color: #f6c972; }
+
+/* Stash desktop + glass panel */
+.stash-desk {
+  position: relative; width: min(460px, 100%) !important; aspect-ratio: 4 / 3.2; border-radius: 18px; overflow: hidden; display: block !important;
+  background: radial-gradient(120% 90% at 20% 10%, #8fc4ff, #3b6fe6 55%, #1c2f8f);
+  box-shadow: 0 40px 80px -30px rgba(37, 99, 235, .6); border: 6px solid #e8eefb;
+}
+.stash-desk .menubar { height: 16px; background: rgba(255,255,255,.55); display: flex; align-items: center; justify-content: flex-end; gap: 8px; padding: 0 8px; font-size: 9px; font-weight: 600; color: #1b2340; }
+.sd-clip { font-size: 10px; }
+.stash-panel {
+  position: absolute; right: 10px; bottom: 10px; width: 58%; padding: 10px 8px 8px; border-radius: 18px; color: #12172e;
+  background: rgba(255,255,255,.55); border: 1px solid rgba(255,255,255,.85);
+  backdrop-filter: blur(18px) saturate(1.6); -webkit-backdrop-filter: blur(18px) saturate(1.6);
+  box-shadow: 0 24px 50px -18px rgba(10, 20, 80, .55), inset 0 1px 0 rgba(255,255,255,.9);
+  transform-origin: 100% 100%;
+}
+.sp-head { display: flex; align-items: center; gap: 6px; padding: 0 6px 6px; font-size: 11px; }
+.sp-logo { color: #2563eb; font-size: 10px; }
+.sp-more { margin-left: auto; color: #6b7393; letter-spacing: 1px; font-size: 9px; }
+.sp-search { display: flex; gap: 6px; align-items: center; margin: 0 2px 7px; padding: 5px 8px; border-radius: 8px; background: rgba(18,23,46,.07); font-size: 10px; color: #6b7393; }
+.sp-search i { font-style: normal; white-space: nowrap; overflow: hidden; }
+.sp-search i.typed { color: #12172e; }
+.sp-chips { display: flex; gap: 4px; margin: 0 2px 6px; }
+.sp-chips span { font-size: 8.5px; font-weight: 700; padding: 3px 7px; border-radius: 999px; background: rgba(18,23,46,.06); color: #59607e; }
+.sp-chips span.on { background: #2563eb; color: #fff; }
+.sp-rows { display: grid; gap: 1px; }
+.sp-row { display: flex; align-items: center; gap: 7px; padding: 4px 5px; border-radius: 8px; transition: background .25s; }
+.sp-row.on { background: rgba(37, 99, 235, .2); }
+.sp-row > div { min-width: 0; flex: 1; }
+.sp-row b { display: block; font-size: 9.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sp-row b.mono { font-family: var(--mono); }
+.sp-row small { display: block; font-size: 8px; color: #6b7393; }
+.sp-row kbd { font-size: 7.5px; padding: 1px 3px; color: #8a90aa; background: none; border: 0; box-shadow: none; }
+.sp-ico { width: 20px; height: 20px; border-radius: 6px; flex-shrink: 0; display: grid; place-items: center; font-size: 9px; font-weight: 800;
+  color: var(--c); background: color-mix(in srgb, var(--c) 18%, transparent); }
+.sp-swatch { background: #5e5ce6; }
+@media (max-width: 520px) { .stash-panel { width: 72%; } }
 
 /* Tech stack chips */
 .stack { display: flex; flex-wrap: wrap; gap: 10px; }

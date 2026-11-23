@@ -150,6 +150,7 @@
   runClipper();
   runNowPlaying();
   runOrbit();
+  runStash();
 
   // =============================================================
   // Mockups
@@ -271,6 +272,38 @@
       gsap.to(st, { left: 0, duration: 7, ease: "none", onUpdate: render, onComplete: () => { i = (i + 1) % modes.length; gsap.delayedCall(0.6, next); } });
     }
     ScrollTrigger.create({ trigger: card, start: "top 85%", once: true, onEnter: next });
+  }
+
+  function runStash() {
+    const desk = $("#stash-mock");
+    if (!desk) return;
+    const panel = $("#stash-panel"), rows = $$(".sp-row", desk), keys = $$("#stash-keys kbd"), query = $("#stash-query");
+    const select = (i) => rows.forEach((row, k) => row.classList.toggle("on", k === i));
+    const press = (els) => gsap.timeline()
+      .to(els, { y: 3, background: "#dbe8ff", duration: 0.1, stagger: 0.04 })
+      .to(els, { y: 0, duration: 0.18, clearProps: "background" }, "+=0.15");
+    const tl = gsap.timeline({ repeat: -1, repeatDelay: 0.8, paused: true });
+    tl.call(() => { select(0); query.textContent = "Search your clips"; query.classList.remove("typed"); })
+      .set(panel, { opacity: 0, x: 30, y: 30, scale: 0.92 })
+      .add(press([keys[0], keys[1]]), "+=0.4")
+      .to(panel, { opacity: 1, x: 0, y: 0, scale: 1, duration: 0.6, ease: "back.out(1.4)" }, "-=0.15")
+      .add(press(keys[2]), "+=0.6").call(() => select(1))
+      .add(press(keys[2]), "+=0.5").call(() => select(2))
+      .add(press(keys[3]), "+=0.6")
+      .to(rows[2], { scale: 0.97, duration: 0.08, yoyo: true, repeat: 1 }, "<")
+      .to(panel, { opacity: 0, x: 16, y: 16, scale: 0.96, duration: 0.3, ease: "power2.in" }, "+=0.15")
+      // second round: search
+      .add(press([keys[0], keys[1]]), "+=0.9")
+      .call(() => select(0))
+      .to(panel, { opacity: 1, x: 0, y: 0, scale: 1, duration: 0.6, ease: "back.out(1.4)" }, "-=0.15")
+      .call(() => { query.textContent = ""; query.classList.add("typed"); }, null, "+=0.3");
+    "total".split("").forEach((ch) => tl.call(() => { query.textContent += ch; }, null, "+=0.12"));
+    tl.call(() => rows.forEach((row, k) => gsap.to(row, { opacity: k === 4 ? 1 : 0.25, duration: 0.25 })))
+      .call(() => select(4), null, "+=0.2")
+      .add(press(keys[3]), "+=0.7")
+      .to(panel, { opacity: 0, x: 16, y: 16, scale: 0.96, duration: 0.3, ease: "power2.in" }, "+=0.15")
+      .call(() => rows.forEach((row) => gsap.set(row, { opacity: 1 })));
+    ScrollTrigger.create({ trigger: desk, start: "top 85%", onEnter: () => tl.play(), onEnterBack: () => tl.play(), onLeave: () => tl.pause(), onLeaveBack: () => tl.pause() });
   }
 
   // Without GSAP (offline or reduced motion) the mockups still show a sensible still frame.

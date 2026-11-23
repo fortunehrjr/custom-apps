@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stash · Custom Apps</title>
+<meta name="description" content="A calm clipboard history for Mac that pops up from the corner with Control-H.">
+<link rel="icon" href="assets/icons/stash.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"></noscript>
+<link rel="stylesheet" href="assets/style.css?v=4">
+</head>
+<body data-app="stash">
+<div class="blobs" aria-hidden="true"><div class="blob"></div><div class="blob"></div><div class="blob"></div><div class="blob"></div></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brand-mark">✦</span>Custom Apps</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+    <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="clipper.html"><img src="assets/icons/clipper.png" alt="">Clipper</a></li><li><a href="ferry.html"><img src="assets/icons/ferry.png" alt="">Ferry</a></li><li><a href="now-playing.html"><img src="assets/icons/now-playing.png" alt="">Now Playing</a></li><li><a href="orbit.html"><img src="assets/icons/orbit.png" alt="">Orbit</a></li><li><a href="stash.html" aria-current="page"><img src="assets/icons/stash.png" alt="">Stash</a></li><li><a href="install.html">Install</a></li><li><a href="updates.html">Updates</a></li><li><a href="built-with.html">Built with</a></li></ul>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <div class="wrap app-hero">
+    <div>
+      <img class="icon" width="96" height="96" src="assets/icons/stash.png" alt="Stash icon">
+      <div class="eyebrow">Clipboard</div>
+      <h1>Stash</h1>
+      <p class="lead">Everything you copy, kept in one calm, tidy place. Press <b>⌃H</b> and your clipboard history slides up from the corner, ready to search and paste.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="https://github.com/fortunehrjr/Stash/releases/latest/download/Stash.dmg">Download Stash.dmg</a>
+        <a class="btn btn-ghost" href="#use">How to use</a>
+      </div>
+      <div class="meta"><span class="chip">macOS 26+</span><span class="chip">Apple silicon &amp; Intel</span><span class="chip">Liquid Glass</span></div>
+    </div>
+    <div class="mock-stage">
+      <div>
+        <div class="stash-desk" id="stash-mock">
+          <div class="menubar"><span class="sd-clip">▤</span> 9:41</div>
+          <div class="stash-panel" id="stash-panel">
+            <div class="sp-head"><span class="sp-logo">◆</span><b>Stash</b><span class="sp-more">•••</span></div>
+            <div class="sp-search"><span>⌕</span><i id="stash-query">Search your clips</i></div>
+            <div class="sp-chips"><span class="on">All</span><span>📌</span><span>≡</span><span>🔗</span><span>▧</span></div>
+            <div class="sp-rows">
+              <div class="sp-row on"><span class="sp-ico" style="--c:#3b82f6">≡</span><div><b>Meeting notes: ship v1.0 Friday</b><small>Notes · now</small></div><kbd>⌘1</kbd></div>
+              <div class="sp-row"><span class="sp-ico" style="--c:#6366f1">🔗</span><div><b>developer.apple.com/design</b><small>Safari · 2m</small></div><kbd>⌘2</kbd></div>
+              <div class="sp-row"><span class="sp-ico sp-swatch"></span><div><b class="mono">#5E5CE6</b><small>Figma · 5m</small></div><kbd>⌘3</kbd></div>
+              <div class="sp-row"><span class="sp-ico" style="--c:#a855f7">▧</span><div><b>Image · 1440 × 900</b><small>Screenshot · 12m</small></div><kbd>⌘4</kbd></div>
+              <div class="sp-row"><span class="sp-ico" style="--c:#3b82f6">≡</span><div><b>let total = items.reduce(0, +)</b><small>Xcode · 1h</small></div><kbd>⌘5</kbd></div>
+            </div>
+          </div>
+        </div>
+        <div class="keys" id="stash-keys"><kbd>⌃</kbd><kbd>H</kbd><kbd>↓</kbd><kbd>↩</kbd></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="reveal"><div class="eyebrow">What you get</div><h2>Never lose a copy again</h2></div>
+    <div class="grid grid-3" style="margin-top:34px">
+      <div class="card feature reveal"><div class="ico">⌘C</div><h3>Copy like always</h3><p>Use ⌘C and ⌘X as you do now. Stash quietly saves text, links, colors, images and files.</p></div>
+      <div class="card feature reveal"><div class="ico">⌃H</div><h3>Pops up from the corner</h3><p>Press ⌃H in any app and a Liquid Glass panel slides up from the bottom right. Change the shortcut any time.</p></div>
+      <div class="card feature reveal"><div class="ico">⌕</div><h3>Search &amp; filter</h3><p>Start typing to find anything. Filter by text, links, images, files or pinned.</p></div>
+      <div class="card feature reveal"><div class="ico">↩</div><h3>Paste for you</h3><p>Pick a clip and it pastes right where you were typing. ⌘1–⌘9 paste the first nine instantly.</p></div>
+      <div class="card feature reveal"><div class="ico">📌</div><h3>Pin &amp; auto-tidy</h3><p>Keep the last 50 to 500 copies (100 by default). Older ones are deleted automatically; pinned clips stay forever.</p></div>
+      <div class="card feature reveal"><div class="ico">🔐</div><h3>Private by design</h3><p>Your history never leaves your Mac, and copies from password managers are skipped.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="use" style="padding-top:0">
+  <div class="wrap grid grid-2" style="align-items:start">
+    <div class="reveal">
+      <div class="eyebrow">How to use it</div>
+      <h2>Copy now, paste whenever</h2>
+      <div class="steps" style="margin-top:26px">
+        <div class="step"><div><h3>Open Stash</h3><p>A short tour shows you around (Next, Back or Skip). Stash then lives in your menu bar as a clipboard icon.</p></div></div>
+        <div class="step"><div><h3>Copy as usual</h3><p>Everything you copy with ⌘C or ⌘X is saved automatically.</p></div></div>
+        <div class="step"><div><h3>Press ⌃H</h3><p>Your history pops up. Type to search, choose with ↑ ↓, press ↩ to paste. Or just click a clip.</p></div></div>
+        <div class="step"><div><h3>Allow pasting (optional)</h3><p>Allow Accessibility once and Stash pastes for you. Without it, Stash copies the clip and you press ⌘V.</p></div></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow">Keyboard</div>
+      <div class="table-wrap"><table>
+        <tr><th>Keys</th><th>What it does</th></tr>
+        <tr><td>⌃H</td><td>Open or close your history.</td></tr>
+        <tr><td>↑ ↓ then ↩</td><td>Choose a clip and paste it.</td></tr>
+        <tr><td>⌘1 … ⌘9</td><td>Paste one of the first nine clips.</td></tr>
+        <tr><td>⌘↩</td><td>Copy only, without pasting.</td></tr>
+        <tr><td>⌘P</td><td>Pin or unpin a clip.</td></tr>
+        <tr><td>⌘⌫</td><td>Delete a clip.</td></tr>
+        <tr><td>Tab</td><td>Switch filter.</td></tr>
+        <tr><td>Esc</td><td>Clear the search, or close.</td></tr>
+      </table></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0"><div class="wrap grid" style="gap:16px">
+  <div class="callout reveal"><div class="em">🔐</div><p><b>First time only:</b> macOS says it can't verify Stash because it's not from the App Store. Open <b>System Settings › Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b>. <a href="install.html">Full install guide →</a></p></div>
+  <div class="callout reveal"><div class="em">🍃</div><p><b>Light on your battery:</b> 0% CPU when idle and about 12 MB of memory. Stash only reads the clipboard when something new is copied.</p></div>
+</div></section>
+<section style="padding-top:0"><div class="wrap pager reveal"><a class="card prev" href="orbit.html"><img src="assets/icons/orbit.png" alt=""><div><small>← Previous</small><b>Orbit</b></div></a><a class="card next" href="clipper.html"><div><small>Next →</small><b>Clipper</b></div><img src="assets/icons/clipper.png" alt=""></a></div></section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>Custom Apps · five small Mac apps, made with care.</div>
+    <nav>
+      <a href="install.html">Install</a>
+      <a href="updates.html">Updates</a>
+      <a href="built-with.html">Built with</a>
+      <a href="https://github.com/fortunehrjr?tab=repositories">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="assets/main.js?v=4"></script>
+</body>
+</html>

@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Built with · Custom Apps</title>
-<meta name="description" content="The technology behind Clipper, Ferry, Now Playing and Orbit.">
+<meta name="description" content="The technology behind Clipper, Ferry, Now Playing, Orbit and Stash.">
 <link rel="icon" href="assets/icons/ferry.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"></noscript>
-<link rel="stylesheet" href="assets/style.css?v=3">
+<link rel="stylesheet" href="assets/style.css?v=4">
 </head>
 <body>
 <div class="blobs" aria-hidden="true"><div class="blob"></div><div class="blob"></div><div class="blob"></div><div class="blob"></div></div>
@@ -20,7 +20,7 @@
   <div class="wrap">
     <a class="brand" href="index.html"><span class="brand-mark">✦</span>Custom Apps</a>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-    <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="clipper.html"><img src="assets/icons/clipper.png" alt="">Clipper</a></li><li><a href="ferry.html"><img src="assets/icons/ferry.png" alt="">Ferry</a></li><li><a href="now-playing.html"><img src="assets/icons/now-playing.png" alt="">Now Playing</a></li><li><a href="orbit.html"><img src="assets/icons/orbit.png" alt="">Orbit</a></li><li><a href="install.html">Install</a></li><li><a href="updates.html">Updates</a></li><li><a href="built-with.html" aria-current="page">Built with</a></li></ul>
+    <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="clipper.html"><img src="assets/icons/clipper.png" alt="">Clipper</a></li><li><a href="ferry.html"><img src="assets/icons/ferry.png" alt="">Ferry</a></li><li><a href="now-playing.html"><img src="assets/icons/now-playing.png" alt="">Now Playing</a></li><li><a href="orbit.html"><img src="assets/icons/orbit.png" alt="">Orbit</a></li><li><a href="stash.html"><img src="assets/icons/stash.png" alt="">Stash</a></li><li><a href="install.html">Install</a></li><li><a href="updates.html">Updates</a></li><li><a href="built-with.html" aria-current="page">Built with</a></li></ul>
   </div>
 </header>
 
@@ -30,7 +30,7 @@
   <div class="wrap center">
     <div class="eyebrow">Under the hood</div>
     <h1>Built <span class="grad-text">with</span></h1>
-    <p class="lead">All four apps are native Mac apps written in Swift. No web views, no Electron, no tracking. That's why they're tiny and fast.</p>
+    <p class="lead">All five apps are native Mac apps written in Swift. No web views, no Electron, no tracking. That's why they're tiny and fast.</p>
     <div class="audience" role="group" aria-label="Who is reading" style="margin-top:26px">
       <button data-who="everyone" aria-pressed="true">Plain English</button>
       <button data-who="dev" aria-pressed="false">Technical</button>
@@ -69,6 +69,12 @@
         <div data-for="dev"><p style="color:var(--muted)">A Swift Package (<code>swift build</code>) with an <code>@Observable</code> timer model. Music comes from AppleScript bridges to Spotify, Music, Chrome and Safari (YouTube via page JavaScript) and <code>AVFoundation</code> for local files. Liquid Glass via <code>glassEffect</code>; end-of-session alerts via <code>UserNotifications</code>.</p></div>
         <div class="stack"><span>Swift Package Manager</span><span>Observation</span><span>AVFoundation</span><span>UserNotifications</span><span>Liquid Glass</span></div>
       </div>
+      <div class="card reveal">
+        <h3><img src="assets/icons/stash.png" alt="" width="28" style="display:inline;vertical-align:middle"> Stash</h3>
+        <p data-for="everyone" style="color:var(--muted)">Notices each time you copy something, saves it on your Mac, and shows your history in a glass panel when you press a shortcut.</p>
+        <div data-for="dev"><p style="color:var(--muted)">A Swift Package. A tolerant timer compares <code>NSPasteboard.changeCount</code> twice a second and only reads the clipboard when it changes, skipping <code>org.nspasteboard.ConcealedType</code> data. The panel is a non-activating <code>NSPanel</code> in <code>NSGlassEffectView</code>, opened by a Carbon hot key; "Paste for me" posts ⌘V with <code>CGEvent</code>. History is JSON plus PNG files in Application Support.</p></div>
+        <div class="stack"><span>NSPasteboard</span><span>NSGlassEffectView</span><span>Carbon hot keys</span><span>CGEvent</span><span>SMAppService</span><span>Swift Package Manager</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -87,7 +93,8 @@
 │   └── Source Code/
 ├── Ferry/          <span class="c"># same layout</span>
 ├── Now Playing/    <span class="c"># same layout</span>
-└── Orbit/          <span class="c"># same layout</span></pre>
+├── Orbit/          <span class="c"># same layout</span>
+└── Stash/          <span class="c"># same layout</span></pre>
   </div>
 </section>
 
@@ -95,7 +102,7 @@
 
 <footer>
   <div class="wrap">
-    <div>Custom Apps · four small Mac apps, made with care.</div>
+    <div>Custom Apps · five small Mac apps, made with care.</div>
     <nav>
       <a href="install.html">Install</a>
       <a href="updates.html">Updates</a>
@@ -107,6 +114,6 @@
 
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script defer src="assets/main.js?v=3"></script>
+<script defer src="assets/main.js?v=4"></script>
 </body>
 </html>

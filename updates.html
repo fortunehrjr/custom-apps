@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"></noscript>
-<link rel="stylesheet" href="assets/style.css?v=3">
+<link rel="stylesheet" href="assets/style.css?v=4">
 </head>
 <body>
 <div class="blobs" aria-hidden="true"><div class="blob"></div><div class="blob"></div><div class="blob"></div><div class="blob"></div></div>
@@ -20,7 +20,7 @@
   <div class="wrap">
     <a class="brand" href="index.html"><span class="brand-mark">✦</span>Custom Apps</a>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-    <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="clipper.html"><img src="assets/icons/clipper.png" alt="">Clipper</a></li><li><a href="ferry.html"><img src="assets/icons/ferry.png" alt="">Ferry</a></li><li><a href="now-playing.html"><img src="assets/icons/now-playing.png" alt="">Now Playing</a></li><li><a href="orbit.html"><img src="assets/icons/orbit.png" alt="">Orbit</a></li><li><a href="install.html">Install</a></li><li><a href="updates.html" aria-current="page">Updates</a></li><li><a href="built-with.html">Built with</a></li></ul>
+    <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="clipper.html"><img src="assets/icons/clipper.png" alt="">Clipper</a></li><li><a href="ferry.html"><img src="assets/icons/ferry.png" alt="">Ferry</a></li><li><a href="now-playing.html"><img src="assets/icons/now-playing.png" alt="">Now Playing</a></li><li><a href="orbit.html"><img src="assets/icons/orbit.png" alt="">Orbit</a></li><li><a href="stash.html"><img src="assets/icons/stash.png" alt="">Stash</a></li><li><a href="install.html">Install</a></li><li><a href="updates.html" aria-current="page">Updates</a></li><li><a href="built-with.html">Built with</a></li></ul>
   </div>
 </header>
 
@@ -52,6 +52,7 @@
         <li>All your settings and choices</li>
         <li>Ferry's transfer history</li>
         <li>Orbit's timer lengths and today's sessions</li>
+        <li>Stash's clipboard history and pinned clips</li>
         <li>Clipper's Accessibility permission (it stays valid across updates)</li>
       </ul>
       <p style="margin-top:14px;color:var(--muted)">Ferry may ask again for Accessibility permission if you use its "Ferry" mode.</p>
@@ -83,6 +84,10 @@ xcodebuild -project NowPlaying.xcodeproj -scheme NowPlaying \
 <pre data-copy><span class="c"># Swift Package; output goes to dist/Orbit.app</span>
 git clone https://github.com/fortunehrjr/Orbit && cd Orbit
 ./build.sh</pre></div>
+      <div class="card reveal"><h3><img src="assets/icons/stash.png" alt="" width="26" style="display:inline;vertical-align:middle"> Stash</h3>
+<pre data-copy><span class="c"># Swift Package; builds dist/Stash.app and installs it</span>
+git clone https://github.com/fortunehrjr/Stash && cd Stash
+./build.sh --install</pre></div>
     </div>
     <div class="grid grid-2" style="margin-top:20px">
       <div class="card reveal"><h3>📦 Make a new installer</h3>
@@ -99,7 +104,7 @@ hdiutil create -volname Ferry -srcfolder stage \
 
 <footer>
   <div class="wrap">
-    <div>Custom Apps · four small Mac apps, made with care.</div>
+    <div>Custom Apps · five small Mac apps, made with care.</div>
     <nav>
       <a href="install.html">Install</a>
       <a href="updates.html">Updates</a>
@@ -111,6 +116,6 @@ hdiutil create -volname Ferry -srcfolder stage \
 
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script defer src="assets/main.js?v=3"></script>
+<script defer src="assets/main.js?v=4"></script>
 </body>
 </html>
