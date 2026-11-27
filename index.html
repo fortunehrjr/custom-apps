@@ -55,7 +55,7 @@
     <div class="wrap">
       <div class="center rv"><h2>Pick one to get started</h2><p class="lead" style="margin-top:12px">Each app has a live preview, setup steps and tips.</p></div>
       <div class="bento">
-        <a class="card-app rv" data-app="clipper" href="#clipper"><span class="tag">Windows</span><img src="assets/icons/clipper.png" alt="" width="64" height="64" loading="lazy"><h3>Clipper</h3><p>Drag windows to the edges to snap them into place, resize two at once, and lock a window so nothing moves it.</p><span class="link-more">Learn more <span>›</span></span></a>
+        <a class="card-app rv" data-app="clipper" href="#clipper"><span class="tag">Windows</span><img src="assets/icons/clipper.png" alt="" width="64" height="64" loading="lazy"><h3>Clipper</h3><p>Drag windows to the edges to snap them into place, resize two at once, and lock a window in place or keep it on top.</p><span class="link-more">Learn more <span>›</span></span></a>
         <a class="card-app rv" style="--d:1" data-app="ferry" href="#ferry"><span class="tag">File copies</span><img src="assets/icons/ferry.png" alt="" width="64" height="64" loading="lazy"><h3>Ferry</h3><p>Live speed, a big percentage and time left whenever you copy files to or from a drive.</p><span class="link-more">Learn more <span>›</span></span></a>
         <a class="card-app rv" data-app="now-playing" href="#now-playing"><span class="tag">Music</span><img src="assets/icons/now-playing.png" alt="" width="64" height="64" loading="lazy"><h3>Now Playing</h3><p>A Spotify mini player in your menu bar and Notification Center.</p><span class="link-more">Learn more <span>›</span></span></a>
         <a class="card-app rv" style="--d:1" data-app="orbit" href="#orbit"><span class="tag">Focus</span><img src="assets/icons/orbit.png" alt="" width="64" height="64" loading="lazy"><h3>Orbit</h3><p>A calm study timer with a glowing dial and your music next to it.</p><span class="link-more">Learn more <span>›</span></span></a>
@@ -98,7 +98,7 @@
         <h1 class="rv">Clipper</h1>
         <p class="lead rv" style="--d:1">Snap, resize and pin your windows, calmly. Drag a window to an edge, or use a shortcut, and it clicks neatly into place.</p>
         <div class="btns rv" style="--d:2"><a class="btn btn-primary" href="https://github.com/fortunehrjr/Clipper/releases/latest/download/Clipper.dmg">Download</a><a class="btn btn-soft" href="#clipper/use">Shortcuts</a></div>
-        <div class="chips rv" style="--d:3"><span class="chip">macOS 14+</span><span class="chip">Apple silicon &amp; Intel</span><span class="chip">Lives in the menu bar</span></div>
+        <div class="chips rv" style="--d:3"><span class="chip">macOS 14+</span><span class="chip">Apple silicon &amp; Intel</span><span class="chip">Lives in the menu bar</span><span class="chip">New in 1.2: Keep on Top</span></div>
       </div>
       <div class="stage rv mock" style="--d:2">
         <div style="width:100%;display:grid;justify-items:center">
@@ -123,7 +123,7 @@
         <div class="feat rv" style="--d:2"><div class="ico">⇔</div><h3>Resize together</h3><p>Drag the edge between two windows and both follow, like a shared divider.</p></div>
         <div class="feat rv"><div class="ico">🔒</div><h3>Lock in place</h3><p>⌃⌥L pins a window. If anything moves it, it slides right back.</p></div>
         <div class="feat rv" style="--d:1"><div class="ico">▦</div><h3>Thirds and more</h3><p>First, center and last thirds, two-thirds, center, fill and restore.</p></div>
-        <div class="feat rv" style="--d:2"><div class="ico">✦</div><h3>Guided tour</h3><p>An animated tour shows every move, and you can replay it any time.</p></div>
+        <div class="feat rv" style="--d:2"><div class="ico">📌</div><h3>Keep on top <span class="chip" style="margin-left:4px;padding:2px 8px;font-size:.7rem;color:var(--accent)">New</span></h3><p>⌃⌥P locks a window and keeps it visible above every other window. Click it to use it as normal.</p></div>
       </div>
     </div>
   </section>
@@ -138,6 +138,7 @@
           <tr><td><kbd>⌃</kbd> <kbd>⌥</kbd> <kbd>↑</kbd></td><td>Top half</td></tr>
           <tr><td><kbd>⌃</kbd> <kbd>⌥</kbd> <kbd>↓</kbd></td><td>Bottom half</td></tr>
           <tr><td><kbd>⌃</kbd> <kbd>⌥</kbd> <kbd>L</kbd></td><td>Lock / unlock the window</td></tr>
+          <tr><td><kbd>⌃</kbd> <kbd>⌥</kbd> <kbd>P</kbd></td><td>Lock and keep on top of other windows</td></tr>
         </table></div>
       </div>
       <div class="rv" style="--d:1">
@@ -492,7 +493,7 @@
       <div class="sec-head rv"><div class="eyebrow">Permissions</div><h2>What each app asks for, and why</h2></div>
       <div class="table-wrap rv"><table class="table">
         <tr><th>App</th><th>Needs</th><th>Asks for</th><th>Why</th></tr>
-        <tr><td>Clipper</td><td>macOS 14+</td><td>Accessibility</td><td>To move and resize other apps' windows.</td></tr>
+        <tr><td>Clipper</td><td>macOS 14+</td><td>Accessibility, Screen Recording (optional)</td><td>To move and resize other apps' windows. Screen Recording only for Keep on Top, to show that window above others.</td></tr>
         <tr><td>Ferry</td><td>macOS 26+</td><td>Accessibility (optional)</td><td>Only to hide Finder's copy window in "Ferry" mode.</td></tr>
         <tr><td>Now Playing</td><td>macOS 14+</td><td>Control Spotify</td><td>To read the current song and send play / skip.</td></tr>
         <tr><td>Orbit</td><td>macOS 26+</td><td>Notifications, control music apps</td><td>To tell you when a session ends and show your music.</td></tr>
@@ -593,9 +594,9 @@ hdiutil create -volname Ferry -srcfolder stage \
       <div class="panel rv"><h3>Shared foundation</h3><div class="stack"><span>Swift</span><span>SwiftUI</span><span>AppKit</span><span>macOS 14 – 26</span><span>Universal (Apple silicon + Intel)</span><span>Ad-hoc code signing</span></div></div>
       <div class="grid2" style="margin-top:20px;gap:20px">
         <div class="panel rv"><h3 class="app-title"><img src="assets/icons/clipper.png" alt="" width="30" height="30">Clipper</h3>
-          <p class="for-all">Uses the Mac's Accessibility feature (the same one screen readers use) to move and size windows, and listens for your keyboard shortcuts.</p>
-          <p class="for-dev">Built with <code>swiftc</code> from a shell script, no Xcode project. Windows move through <code>AXUIElement</code>; drag-to-snap watches mouse events; hot keys use Carbon <code>RegisterEventHotKey</code>. An identifier-based designated requirement keeps the Accessibility grant across rebuilds.</p>
-          <div class="stack"><span>AXUIElement</span><span>Carbon hot keys</span><span>NSEvent monitors</span><span>SwiftUI onboarding</span></div></div>
+          <p class="for-all">Uses the Mac's Accessibility feature (the same one screen readers use) to move and size windows, and listens for your keyboard shortcuts. To keep a window on top, it shows a live picture of it above everything else.</p>
+          <p class="for-dev">Built with <code>swiftc</code> from a shell script, no Xcode project. Windows move through <code>AXUIElement</code>; drag-to-snap watches mouse events; hot keys use Carbon <code>RegisterEventHotKey</code>. Keep on Top mirrors the window into a floating <code>NSPanel</code> with ScreenCaptureKit window capture, streaming only while it's covered. An identifier-based designated requirement keeps the Accessibility grant across rebuilds.</p>
+          <div class="stack"><span>AXUIElement</span><span>Carbon hot keys</span><span>NSEvent monitors</span><span>ScreenCaptureKit</span><span>SwiftUI onboarding</span></div></div>
         <div class="panel rv" style="--d:1"><h3 class="app-title"><img src="assets/icons/ferry.png" alt="" width="30" height="30">Ferry</h3>
           <p class="for-all">Reads how fast each drive is reading and writing, and listens to the progress Finder already shares, to know file names, sizes and percentages.</p>
           <p class="for-dev">IOKit <code>IOBlockStorageDriver</code> statistics give per-drive byte counters. FSEvents spots new files so Ferry can subscribe with <code>Progress.addSubscriber(forFileURL:)</code> to Finder's copy progress, which also allows <code>cancel()</code>. The window is a non-activating <code>NSPanel</code> in <code>NSGlassEffectView</code>.</p>
